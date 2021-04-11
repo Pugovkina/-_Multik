@@ -60,7 +60,7 @@ int main ()
 	FonDraw_morning ();
 	
 	SolnceDraw_speak (150, 100, 2, 2, TX_YELLOW);
-
+	
 	EndTitles ();
 	
 	txEnd ();
@@ -123,7 +123,8 @@ void FonDraw_morning ()
 	int t = 0;
 	while (t <= 20)
 		{
-	    txSetFillColor (RGB (151, 255, 255));
+	    txSetColor     (RGB (151, 255, 255));
+		txSetFillColor (RGB (151, 255, 255));
 	    txRectangle (0, 0, 1100, 250);
  	
     	txSetColor     (TX_LIGHTGREEN);
@@ -159,7 +160,7 @@ void FonDraw_morning ()
 		DerevoDraw (1050, 240, 0.9, 1.3, 0, 0, RGB ( 88, 44, 44), TX_GREEN);
 		DerevoDraw ( 880, 300, 1.3, 1.7, 5, 0, RGB (128, 64, 64), TX_ORANGE);
 	
-		txSleep(100);
+		txSleep(50);
 		
 		t++;	
 		}
@@ -167,6 +168,7 @@ void FonDraw_morning ()
 
 void FonDraw ()
 	{
+	txSetColor     (RGB (151, 255, 255));
 	txSetFillColor (RGB (151, 255, 255));
 	txRectangle (0, 0, 1100, 250);
 	
@@ -213,7 +215,7 @@ void SolnceDraw_speak (int x, int y, double sizeX, double sizeY,
 				       COLORREF sunColor)
 	{
     int t = 0;
-	while (t <= 10)
+	while (t <= 1)
 		{
 		txSetColor     (sunColor, 3);
 	    txSetFillColor (sunColor);
@@ -244,22 +246,23 @@ void SolnceDraw_speak (int x, int y, double sizeX, double sizeY,
 		
 		txSetColor   (TX_ORANGE);
 	    txSelectFont ("Arial", 30);
-	    txTextOut (185 + t%4, 120, "С Добрым утром");
-		
-		txSleep(100);
-		
-		t++;
+	    txTextOut (185 , 120, "С Добрым утром");
 		
 		int x = 60;
 	    while (x <= 650)
 		    {
 	     	DomDraw (x, 580, 1.5, 1.5, 1, 1, TX_BROWN, TX_BLUE, TX_YELLOW, TX_DARKGRAY, TX_CYAN);
-		
+	     	
+			GerlDraw (x + 150, 705, 0.7, 0.7, -0.5, -(x/10) % 2 * 2 - 1, (x/10) % 2 * 2 - 1, 
+		              TX_YELLOW, RGB (rand()%207, rand()%159, rand()%255), TX_GREEN);
+		              
 		    x += 215;
 			}
-		 
-	    	
-		}
+		
+		txSleep(10);
+		
+		t++;
+	    }
 	}
 
 void TychkaDraw (int x, int y, double sizeX, double sizeY, 
@@ -357,7 +360,7 @@ void DomDraw (int x, int y, double sizeX, double sizeY,
 	    txEllipse (x + 70*sizeX - opendverX/2 * (t%2), y + 55*sizeY + opendverY/2 * (t%2), 
 		           x + 75*sizeX - opendverX/2 * (t%2), y + 65*sizeY + opendverY/2 * (t%2));
 
-        txSleep(250);
+        txSleep(150);
         
 		t++;
         }

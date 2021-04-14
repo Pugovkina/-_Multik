@@ -1,9 +1,10 @@
 #include<TXLib.h>
 
 void BeginTitles      ();
-void Sun_Day          ();
+void EndTitles        ();
 void Morning          ();
-void FonDraw          ();
+void Day              ();
+void DaySun           ();
 void SolnceDraw_speak ();
 
 void SolnceDraw       (int x, int y, double sizeX, double sizeY, double eyes, 
@@ -45,8 +46,6 @@ void DerevoDraw_Rain  (int x, int y, double sizeX, double sizeY,
 				       double veterX, double veterY,
                        COLORREF stvolColor, COLORREF appleColor);
                       
-void EndTitles        ();
-
 int main ()
 	{
 	txCreateWindow (1100, 800);
@@ -57,9 +56,9 @@ int main ()
 	
 	Morning ();
 	
-	SolnceDraw_speak ();
+	SolnceDraw_speak (); 
 	
-//	Sun_Day ();
+	Day ();
 	
 	EndTitles ();
 	
@@ -123,6 +122,99 @@ void Morning ()
 	    KacheliDraw (400, 420, 1, 1, 1, TX_DARKGRAY);
 	
 	    txSleep(150);
+		
+		t++;	
+		}
+	}
+
+void Day ()
+	{
+	txSetColor     (RGB (151, 255, 255));
+	txSetFillColor (RGB (151, 255, 255));
+	txRectangle (0, 0, 1100, 250);
+ 	
+    txSetColor     (TX_LIGHTGREEN);
+	txSetFillColor (TX_LIGHTGREEN);
+	txRectangle (0, 250, 1100, 800);
+	
+	int x = 60;
+	while (x <= 650)
+	    {
+	   	DomDraw_morning (x, 580, 1.5, 1.5, 1, 1, TX_BROWN, TX_BLUE, TX_LIGHTGREEN, 
+	 		             TX_DARKGRAY, TX_CYAN);
+			
+	    TychkaDraw (x + 340, 100, 1.5 - x%5, 2 - x%5, RGB (121, 206, 227));
+		
+	    ElkaDraw (x     -  10, 690,       1,         1,   0, 0, TX_GREEN,          TX_BROWN);
+	    ElkaDraw (x/1.5 + 690, 670 - x/8, 0.9 + x%2, 1.3, 0, 0, RGB (75, 121, 43), RGB (191, 96, 0));
+	    ElkaDraw (x/1.5 +  80, 300 - x/4, 1.2 + x%2, 1.3, 0, 0, RGB (55,  88, 31), RGB (130, 65, 0));		    
+		ElkaDraw (x/1.5 + 450, 200 + x/4, 1   + x%2, 1,   0, 0, RGB (55,  88, 31), RGB (130, 65, 0));
+		
+		DerevoDraw (x/1.5 + 740, 450 - x/4, 1, 1, 0, 0, TX_BROWN, TX_RED);
+		DerevoDraw (x/1.5 + 830, 530 - x/4, 1, 1, 0, 0, TX_BROWN, RGB (242, 162, 102));
+			
+		x += 215;
+		}
+		
+	DaySun ();
+	}
+
+void DaySun ()
+{
+	int t = 0;
+	while (t <= 50)
+		{
+	    txSetColor     (RGB (151, 255, 255));
+		txSetFillColor (RGB (151, 255, 255));
+		txRectangle (0, 0, 1100, 250);
+ 	
+    	txSetColor     (TX_LIGHTGREEN);
+	    txSetFillColor (TX_LIGHTGREEN);
+	    txRectangle (0, 250, 1100, 800);
+	
+	    int x = 60;
+	    while (x <= 650)
+		    {
+	     	DomDraw_morning (x, 580, 1.5, 1.5, 1, 1, TX_BROWN, TX_BLUE, RGB (255, 128, 192), 
+		 	                 TX_DARKGRAY, TX_CYAN);
+			
+		    ElkaDraw (x     -  10, 690,       1,         1,   0, 0, TX_GREEN,          TX_BROWN);
+		    ElkaDraw (x/1.5 + 690, 670 - x/8, 0.9 + x%2, 1.3, 0, 0, RGB (75, 121, 43), RGB (191, 96, 0));
+		    ElkaDraw (x/1.5 +  80, 300 - x/4, 1.2 + x%2, 1.3, 0, 0, RGB (55,  88, 31), RGB (130, 65, 0));		    
+			ElkaDraw (x/1.5 + 450, 200 + x/4, 1   + x%2, 1,   0, 0, RGB (55,  88, 31), RGB (130, 65, 0));
+			
+			DerevoDraw (x/1.5 + 740, 450 - x/4, 1, 1, 0, 0, TX_BROWN, TX_RED);
+		    DerevoDraw (x/1.5 + 830, 530 - x/4, 1, 1, 0, 0, TX_BROWN, RGB (242, 162, 102));
+			
+			x += 215;
+			}
+		
+	    SolnceDraw (150 + t*2, 100, 2, 2, 0.1 - t%4, 1, t%2 - 1.5, TX_YELLOW);
+	   	
+	   	TychkaDraw (  5 + t*2,  60, 1.5, 2 , RGB (121, 206, 227));
+		TychkaDraw (345 + t*2, 100, 1.5, 2 , RGB (121, 206, 227));
+		TychkaDraw (545 + t*2, 100, 1.5, 2 , RGB (121, 206, 227));
+		TychkaDraw (645 + t*2, 100, 1.5, 2 , RGB (121, 206, 227));	
+		
+	    KacheliDraw (400, 420, 1, 1, (t/10) % 2 * 2 - 1, TX_DARKGRAY);
+		
+		GerlDraw (140, 705, 0.7, 0.7, -0.5, -(t/10) % 2 * 2 - 1, (t/10) % 2 * 2 - 1, 
+			      TX_YELLOW, TX_BLUE, TX_GREEN);
+			      
+		txSetColor   (TX_ORANGE);
+	    txSelectFont ("Arial", 20);
+	    txTextOut (160, 680, "С Добрым утром,");
+	    txTextOut (160, 695, "подружка");
+	    		
+		GerlDraw (315, 705, 0.7, 0.7, -0.5, (t/10) % 2 * 2 - 1, (t/10) % 2 * 2 - 1, 
+		          TX_YELLOW, TX_ORANGE, TX_GREEN);
+		
+		txSetColor   (TX_BLUE);
+	    txSelectFont ("Arial", 20);
+	    txTextOut (335, 690, "С Добрым утром,");
+	    txTextOut (335, 705, "спасибо");
+	    
+		txSleep(150);
 		
 		t++;	
 		}
@@ -198,107 +290,6 @@ void TychkaDraw (int x, int y, double sizeX, double sizeY,
 	txEllipse (x + 20*sizeX, y - 20*sizeY, x + 65*sizeX, y + 30*sizeY);
 	}
 	
-void Sun_Day ()
-	{
-	int t = 0;
-	while (t <= 10)
-		{
-	    txSetColor     (RGB (151, 255, 255));
-		txSetFillColor (RGB (151, 255, 255));
-		txRectangle (0, 0, 1100, 250);
- 	
-    	txSetColor     (TX_LIGHTGREEN);
-	    txSetFillColor (TX_LIGHTGREEN);
-	    txRectangle (0, 250, 1100, 800);
-	
-	    int x = 60;
-	    while (x <= 650)
-		    {
-	     	DomDraw (x, 580, 1.5, 1.5, 1, 1, TX_BROWN, TX_BLUE, RGB (rand()%243, rand()%243, rand()%101), 
-		 	 	  TX_DARKGRAY, TX_CYAN);
-			
-		    TychkaDraw (x + 340, 100, 1.5 - x%5, 2 - x%5, RGB (121, 206, 227));
-		
-		    ElkaDraw (x     -  10, 690,       1,         1,   0, 0, TX_GREEN,          TX_BROWN);
-		    ElkaDraw (x/1.5 + 690, 670 - x/8, 0.9 + x%2, 1.3, 0, 0, RGB (75, 121, 43), RGB (191, 96, 0));
-		    ElkaDraw (x/1.5 +  80, 300 - x/4, 1.2 + x%2, 1.3, 0, 0, RGB (55,  88, 31), RGB (130, 65, 0));		    
-			ElkaDraw (x/1.5 + 450, 200 + x/4, 1   + x%2, 1,   0, 0, RGB (55,  88, 31), RGB (130, 65, 0));
-			
-			DerevoDraw (x/1.5 + 740, 450 - x/4, 1, 1, 0, 0, TX_BROWN, TX_RED);
-			DerevoDraw (x/1.5 + 830, 530 - x/4, 1, 1, 0, 0, TX_BROWN, RGB (242, 162, 102));
-			
-			x += 215;
-			}	
-		
-/*	txClear();
-	int t = 0;
-	while (t <= 10)
-		{
-		txClear();
-		
-		FonDraw ();
-	/*	int x = 100;
-		while (x <= 550)
-			{
-			
-		
-			TychkaDraw (x + 100, 100, 1.3, 0.8, RGB (  0,  94, 187));
-		
-			SolnceDraw (x,       100, 2,   2,   (x/10) % 2,   TX_YELLOW);
-		
-			TychkaDraw (x + 520,  40, 1,   1,   RGB (136, 196, 255));
-			TychkaDraw (x + 300, 160, 0.8, 1.5, RGB ( 13, 134, 255));
-			TychkaDraw (x -  50,  40, 1,   1,   RGB (136, 196, 255));
-			TychkaDraw (x - 100, 160, 1.8, 1.5, RGB ( 13, 134, 255));
-			TychkaDraw (x - 550,  80, 1,   1,   RGB (136, 196, 234));
-			TychkaDraw (x - 400, 185, 1.8, 1.5, RGB ( 13, 184, 255));
-		
-			KacheliDraw (250, 390, 1.2, 1.2, (x/10) % 2 * 2 - 1, TX_DARKGRAY);
-			
-			/*GerlDraw (x + 110, 700, 1, 1, -0.5, -(x/10) % 2 * 2 - 1, (x/10) % 2 * 2 - 1, 
-			          TX_YELLOW, TX_BLUE, TX_GREEN);
-			GerlDraw (x + 110, 320, 0.6, 0.6, -0.5, (x/10) % 2 * 2 - 1, (x/10) % 2 * 2 - 1, 
-		        	  TX_YELLOW, TX_BLUE, TX_GREEN);
-		          
-			txSleep (50);
-			
-			x++;
-			}**/
-				
-    	txSleep (50);
-		
-		t++;
-		}
-	}
-
-
-void FonDraw ()
-	{
-	txSetColor     (RGB (151, 255, 255));
-	txSetFillColor (RGB (151, 255, 255));
-	txRectangle (0, 0, 1100, 250);
-	
-	txSetColor     (TX_LIGHTGREEN);
-	txSetFillColor (TX_LIGHTGREEN);
-	txRectangle (0, 250, 1100, 800);
-	
-	int x = 60;
-	while (x <= 650)
-		{
-		DomDraw (x, 580, 1.5,   1.5,   x%9,  x%9,  TX_BROWN,  TX_BLUE,   TX_YELLOW, TX_DARKGRAY, TX_CYAN);	
-		
-		x += 215;
-		}
-	
-	ElkaDraw (  70, 690, 1,   1,   0, 0, TX_GREEN,          TX_BROWN);	
-	ElkaDraw ( 750, 600, 0.9, 1.3, 0, 0, RGB (75, 121, 43), RGB (191, 96, 0));
-	ElkaDraw (1020, 600, 1.7, 1.8, 0, 0, RGB (55,  88, 31), RGB (130, 65, 0));
-	
-	DerevoDraw (900, 550, 1,   1,   0, 0, TX_BROWN,          TX_RED);
-	DerevoDraw (810, 440, 0.9, 1.3, 0, 0, RGB ( 88, 44, 44), TX_GREEN);
-	DerevoDraw (880, 300, 1.3, 1.7, 5, 0, RGB (128, 64, 64), TX_ORANGE);	
-	}
-
 void DomDraw_morning (int x, int y, double sizeX, double sizeY, 
                       double opendverX, double opendverY,
 			          COLORREF domColor, COLORREF krischaColor, 

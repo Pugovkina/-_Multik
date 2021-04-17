@@ -38,9 +38,9 @@ void DomDraw          (int x, int y, double sizeX, double sizeY,
                        COLORREF dverColor);
 			          
 void GerlDraw         (int x, int y, double sizeX, double sizeY, 
-                       double smile, double legs, double handR, double handL, 
-                       COLORREF bantikColor, COLORREF platieColor, 
-                       COLORREF glazaColor);
+                       double smile, double legs, double handR, 
+                       double handL, COLORREF bantikColor, 
+                       COLORREF platieColor, COLORREF glazaColor);
 			          
 void KacheliDraw      (int x, int y, double sizeX, double sizeY, 
                        double height_kacheli, COLORREF kacheliColor);
@@ -77,7 +77,7 @@ int main ()
 
     Girl_third_walk ();
     
-	EndTitles ();
+    EndTitles ();
     
     txEnd ();
 
@@ -576,7 +576,7 @@ void Gerl_speak (int move_hands, int move_legs)
     GerlDraw (315, 705, 0.7, 0.7, -0.5, abs (move_legs%10 - 10) - 5,  (move_hands/10) % 2 * 2 - 1, (move_hands/10) % 2 * 2 - 1, 
               TX_YELLOW, TX_ORANGE, TX_GREEN);
 	
-	txSetColor   (TX_ORANGE);
+    txSetColor   (TX_ORANGE);
     txSelectFont ("Arial", 20);
     txTextOut (165, 700, "Доброе утро,");
     txTextOut (165, 715, "Маша");
@@ -616,7 +616,7 @@ void Girl_walk ()
         
         KacheliDraw (400, 420, 1, 1, 1, TX_DARKGRAY);
 		
-		txSleep(150);
+        txSleep(150);
 
         t++;	
         }
@@ -645,21 +645,21 @@ void Girl_third_walk ()
         TychkaDraw (645 + t*2, 100, 1.5, 2 , RGB (121, 206, 227));	
 
         GerlDraw (400 - t - 20, 400, 0.7, 0.7, 1 - t%2 -0.5, abs (t%10 - 10) - 5, -(t/10) % 2 * 2 - 1, 1, 
-              TX_YELLOW, TX_BLUE, TX_GREEN);
+                  TX_YELLOW, TX_BLUE, TX_GREEN);
         
         GerlDraw (540 - t, 410, 0.7, 0.7, 1 - t%2 -0.5, abs (t%10 - 10) - 5,  (t/10) % 2 * 2 - 1, 1, 
-              TX_YELLOW, TX_ORANGE, TX_GREEN);
+                  TX_YELLOW, TX_ORANGE, TX_GREEN);
         
         KacheliDraw (400, 420, 1, 1, 2 - t%2 - 1, TX_DARKGRAY);
 		
-		GerlDraw (690 - t, 705, 0.7, 0.7, 1 - t%2 -0.5, abs (t%10 - 10) - 5,  (t/10) % 2 * 2 - 1, 1, 
+        GerlDraw (690 - t, 705, 0.7, 0.7, 1 - t%2 -0.5, abs (t%10 - 10) - 5,  (t/10) % 2 * 2 - 1, 1, 
                   TX_YELLOW, TX_LIGHTRED, TX_GREEN);
         
-		txSetColor   (TX_ORANGE);
+        txSetColor   (TX_ORANGE);
         txSelectFont ("Arial", 20);
         txTextOut (600 - t, 700, "Подружки!!!");
         
-		txSleep(150);
+        txSleep(150);
 
         t++;	
         }

@@ -108,7 +108,7 @@ void Morning ()
             {
             TychkaDraw (x + 340, 100, 1.5 - x%5, 2 - x%5, RGB (121, 206, 227));
             
-			Fon_Dom_Derevia (x, 1, RGB (134, 134, 134));
+            Fon_Dom_Derevia (x, 1, RGB (134, 134, 134));
 		
             x += 215;
             }
@@ -132,7 +132,7 @@ void Day ()
         {
         TychkaDraw (x + 340, 100, 1.5 - x%5, 2 - x%5, RGB (121, 206, 227));
 		
-		Fon_Dom_Derevia (x, 1, TX_LIGHTGREEN);
+        Fon_Dom_Derevia (x, 1, TX_LIGHTGREEN);
 		
         x += 215;
         }
@@ -610,5 +610,5 @@ void Girl_walk ()
 
         t++;	
         }
-	}
+    }
 

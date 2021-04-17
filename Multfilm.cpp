@@ -1,4 +1,4 @@
-п»ї#include<TXLib.h>
+#include<TXLib.h>
 
 void BeginTitles      ();
 void EndTitles        ();
@@ -6,47 +6,53 @@ void Morning          ();
 void Day              ();
 void DaySun           ();
 void SolnceDraw_speak ();
+void Fon_Rectangle    ();
+void Gerl_speak       (int move_hands, int move_legs);
 
-void SolnceDraw        (int x, int y, double sizeX, double sizeY, 
-                        double eyes, double lenghLuch, double smile, 
-                        COLORREF sunColor); 
+void Fon_Dom_Derevia  (int x_start, int veter, COLORREF okno_Color);
+
+void Girl_walk        ();
+
+void SolnceDraw       (int x, int y, double sizeX, double sizeY, 
+                       double eyes, double lenghLuch, double smile, 
+                       COLORREF sunColor); 
 				      
-void TychkaDraw        (int x, int y, double sizeX, double sizeY, 
-                        COLORREF tychaColor);
+void TychkaDraw       (int x, int y, double sizeX, double sizeY, 
+                       COLORREF tychaColor);
 				      
-void DomDraw_morning   (int x, int y, double sizeX, double sizeY, 
-                        double opendverX, double opendverY,
-                        COLORREF domColor, COLORREF krischaColor,
-                        COLORREF oknoColor, COLORREF trubaColor,
-                        COLORREF dverColor);
+void DomDraw_morning  (int x, int y, double sizeX, double sizeY, 
+                       double opendverX, double opendverY,
+                       COLORREF domColor, COLORREF krischaColor,
+                       COLORREF oknoColor, COLORREF trubaColor,
+                       COLORREF dverColor);
 			          
-void DomDraw           (int x, int y, double sizeX, double sizeY, 
-                        double opendverX, double opendverY,
-                        COLORREF domColor, COLORREF krischaColor,
-                        COLORREF oknoColor, COLORREF trubaColor,
-                        COLORREF dverColor);
+void DomDraw          (int x, int y, double sizeX, double sizeY, 
+                       double opendverX, double opendverY,
+                       COLORREF domColor, COLORREF krischaColor,
+                       COLORREF oknoColor, COLORREF trubaColor,
+                       COLORREF dverColor);
 			          
-void GerlDraw          (int x, int y, double sizeX, double sizeY, 
-                        double smile, double handR, double handL, 
-                        COLORREF bantikColor, COLORREF platieColor, 
-                        COLORREF glazaColor);
+void GerlDraw         (int x, int y, double sizeX, double sizeY, 
+                       double smile, double legs, double handR, double handL, 
+                       COLORREF bantikColor, COLORREF platieColor, 
+                       COLORREF glazaColor);
 			          
-void KacheliDraw       (int x, int y, double sizeX, double sizeY, 
-                        double height_kacheli, COLORREF kacheliColor);
+void KacheliDraw      (int x, int y, double sizeX, double sizeY, 
+                       double height_kacheli, COLORREF kacheliColor);
 				      
-void ElkaDraw          (int x, int y, double sizeX, double sizeY, 
-                        double veterX, double veterY,
-                        COLORREF hvoiaColor, COLORREF stvolColor);
+void ElkaDraw         (int x, int y, double sizeX, double sizeY, 
+                       double veterX, double veterY,
+                       COLORREF hvoiaColor, COLORREF stvolColor);
 			          
-void DerevoDraw        (int x, int y, double sizeX, double sizeY,
-                        double veterX, double veterY,
-                        COLORREF stvolColor, COLORREF appleColor);
+void DerevoDraw       (int x, int y, double sizeX, double sizeY,
+                       double veterX, double veterY,
+                       COLORREF stvolColor, COLORREF appleColor);
                       
-void Rain              (int x, int y, double lenght_Rain);
+void Rain             (int x, int y, double lenght_Rain);
 
-void DerevoDraw_Rain   (int x, int y, double sizeX, double sizeY,
-                        double veterX, double veterY,
-                        COLORREF stvolColor, COLORREF appleColor);
+void DerevoDraw_Rain  (int x, int y, double sizeX, double sizeY,
+                       double veterX, double veterY,
+                       COLORREF stvolColor, COLORREF appleColor);
                       
 int main ()
     {
@@ -61,6 +67,8 @@ int main ()
     SolnceDraw_speak (); 
 
     Day ();
+    
+    Girl_walk ();
 
     EndTitles ();
 
@@ -80,7 +88,7 @@ void BeginTitles ()
 
         txSelectFont ("Arial", 100);
         txTextOut (350, 700 - t*10, "Мультфильм");
-        txTextOut (200, 800 - t*10, "Прогулка с друзьями");
+        txTextOut (200, 800 - t*10, "Прогулка c подружками");
 
         txSleep(100);
 
@@ -93,30 +101,15 @@ void Morning ()
     int t = 0;
     while (t <= 10)
         {
-        txSetColor     (RGB (151, 255, 255));
-        txSetFillColor (RGB (151, 255, 255));
-        txRectangle (0, 0, 1100, 250);
-
-        txSetColor     (TX_LIGHTGREEN);
-        txSetFillColor (TX_LIGHTGREEN);
-        txRectangle (0, 250, 1100, 800);
+        Fon_Rectangle ();
 
         int x = 60;
         while (x <= 650)
             {
-            DomDraw_morning (x, 580, 1.5, 1.5, 1 - x%5, 1 - x%5, TX_BROWN, TX_BLUE, 
-                             RGB (134, 134, 134), TX_DARKGRAY, TX_CYAN);
-
             TychkaDraw (x + 340, 100, 1.5 - x%5, 2 - x%5, RGB (121, 206, 227));
-
-            ElkaDraw (x     -  10, 690,       1,         1,   0, 0, TX_GREEN,          TX_BROWN);
-            ElkaDraw (x/1.5 + 690, 670 - x/8, 0.9 + x%2, 1.3, 0, 0, RGB (75, 121, 43), RGB (191, 96, 0));
-            ElkaDraw (x/1.5 +  80, 300 - x/4, 1.2 + x%2, 1.3, 0, 0, RGB (55,  88, 31), RGB (130, 65, 0));		    
-            ElkaDraw (x/1.5 + 450, 200 + x/4, 1   + x%2, 1,   0, 0, RGB (55,  88, 31), RGB (130, 65, 0));
-
-            DerevoDraw (x/1.5 + 740, 450 - x/4, 1, 1, 0, 0, TX_BROWN, TX_RED);
-            DerevoDraw (x/1.5 + 830, 530 - x/4, 1, 1, 0, 0, TX_BROWN, RGB (242, 162, 102));
-
+            
+			Fon_Dom_Derevia (x, 1, RGB (134, 134, 134));
+		
             x += 215;
             }
 
@@ -132,90 +125,48 @@ void Morning ()
 
 void Day ()
     {
-    txSetColor     (RGB (151, 255, 255));
-    txSetFillColor (RGB (151, 255, 255));
-    txRectangle (0, 0, 1100, 250);
-
-    txSetColor     (TX_LIGHTGREEN);
-    txSetFillColor (TX_LIGHTGREEN);
-    txRectangle (0, 250, 1100, 800);
+    Fon_Rectangle ();
 
     int x = 60;
     while (x <= 650)
         {
-        DomDraw_morning (x, 580, 1.5, 1.5, 1, 1, TX_BROWN, TX_BLUE, TX_LIGHTGREEN, 
-                         TX_DARKGRAY, TX_CYAN);
-
         TychkaDraw (x + 340, 100, 1.5 - x%5, 2 - x%5, RGB (121, 206, 227));
-   
-        ElkaDraw (x     -  10, 690,       1,         1,   0, 0, TX_GREEN,          TX_BROWN);
-        ElkaDraw (x/1.5 + 690, 670 - x/8, 0.9 + x%2, 1.3, 0, 0, RGB (75, 121, 43), RGB (191, 96, 0));
-        ElkaDraw (x/1.5 +  80, 300 - x/4, 1.2 + x%2, 1.3, 0, 0, RGB (55,  88, 31), RGB (130, 65, 0));		    
-        ElkaDraw (x/1.5 + 450, 200 + x/4, 1   + x%2, 1,   0, 0, RGB (55,  88, 31), RGB (130, 65, 0));
-
-        DerevoDraw (x/1.5 + 740, 450 - x/4, 1, 1, 0, 0, TX_BROWN, TX_RED);
-        DerevoDraw (x/1.5 + 830, 530 - x/4, 1, 1, 0, 0, TX_BROWN, RGB (242, 162, 102));
-
+		
+		Fon_Dom_Derevia (x, 1, TX_LIGHTGREEN);
+		
         x += 215;
         }
 
     DaySun ();
+    
     }
 
 void DaySun ()
     {
     int t = 0;
-    while (t <= 50)
+    while (t <= 15)
         {
-        txSetColor     (RGB (151, 255, 255));
-        txSetFillColor (RGB (151, 255, 255));
-        txRectangle (0, 0, 1100, 250);
-
-        txSetColor     (TX_LIGHTGREEN);
-        txSetFillColor (TX_LIGHTGREEN);
-        txRectangle (0, 250, 1100, 800);
+        Fon_Rectangle ();
 
         int x = 60;
         while (x <= 650)
             {
-            DomDraw_morning (x, 580, 1.5, 1.5, 1, 1, TX_BROWN, TX_BLUE, RGB (255, 128, 192), 
-                             TX_DARKGRAY, TX_CYAN);
-
-            ElkaDraw (x     -  10, 690,       1,         1,   0, 0, TX_GREEN,          TX_BROWN);
-            ElkaDraw (x/1.5 + 690, 670 - x/8, 0.9 + x%2, 1.3, 0, 0, RGB (75, 121, 43), RGB (191, 96, 0));
-            ElkaDraw (x/1.5 +  80, 300 - x/4, 1.2 + x%2, 1.3, 0, 0, RGB (55,  88, 31), RGB (130, 65, 0));		    
-            ElkaDraw (x/1.5 + 450, 200 + x/4, 1   + x%2, 1,   0, 0, RGB (55,  88, 31), RGB (130, 65, 0));
-
-            DerevoDraw (x/1.5 + 740, 450 - x/4, 1, 1, 0, 0, TX_BROWN, TX_RED);
-            DerevoDraw (x/1.5 + 830, 530 - x/4, 1, 1, 0, 0, TX_BROWN, RGB (242, 162, 102));
-
+            Fon_Dom_Derevia (x, x, RGB (255, 128, 192));
+            
             x += 215;
             }
 		
-        SolnceDraw (150 + t*2, 100, 2, 2, 0.1 - t%4, 1, t%2 - 1.5, TX_YELLOW);
+        SolnceDraw (150 + t*2, 100, 2, 2, 0.1 - t%4, t%2, t%2 - 1.5, TX_YELLOW);
 
         TychkaDraw (  5 + t*2,  60, 1.5, 2 , RGB (121, 206, 227));
         TychkaDraw (345 + t*2, 100, 1.5, 2 , RGB (121, 206, 227));
         TychkaDraw (545 + t*2, 100, 1.5, 2 , RGB (121, 206, 227));
         TychkaDraw (645 + t*2, 100, 1.5, 2 , RGB (121, 206, 227));	
 
-        KacheliDraw (400, 420, 1, 1, (t/10) % 2 * 2 - 1, TX_DARKGRAY);
-
-        GerlDraw (140, 705, 0.7, 0.7, -0.5, -(t/10) % 2 * 2 - 1, (t/10) % 2 * 2 - 1, 
-                  TX_YELLOW, TX_BLUE, TX_GREEN);
-
-        txSetColor   (TX_ORANGE);
-        txSelectFont ("Arial", 20);
-        txTextOut (160, 680, "Доброе утро,");
-        txTextOut (160, 695, "подружка");
-
-        GerlDraw (315, 705, 0.7, 0.7, -0.5, (t/10) % 2 * 2 - 1, (t/10) % 2 * 2 - 1, 
-                  TX_YELLOW, TX_ORANGE, TX_GREEN);
-
-        txSetColor   (TX_BLUE);
-        txTextOut (335, 690, "Доброе утро,");
-        txTextOut (335, 705, "спасибо");
-
+        KacheliDraw (400, 420, 1, 1, 1, TX_DARKGRAY);
+        
+        Gerl_speak (t, t);
+        
         txSleep(150);
 
         t++;	
@@ -230,14 +181,14 @@ void SolnceDraw (int x, int y, double sizeX, double sizeY, double eyes,
 
     txEllipse (x - 27*sizeX, y - 27*sizeY, x + 27*sizeX, y + 27*sizeY);
 
-    txLine (x + 28*sizeX, y,            x + 55*sizeX*lenghLuch,     y);
-    txLine (x - 28*sizeX, y,            x - 60*sizeX*lenghLuch/1.5, y);
-    txLine (x,            y + 28*sizeY, x,                          y + 60*sizeY*lenghLuch);
-    txLine (x,            y - 28*sizeY, x,                          y - 80*sizeY*lenghLuch);
-    txLine (x + 20*sizeX, y + 20*sizeY, x + 50*sizeX*lenghLuch,     y + 50*sizeY*lenghLuch);
-    txLine (x + 20*sizeX, y - 20*sizeY, x + 50*sizeX*lenghLuch,     y - 40*sizeY*lenghLuch);
-    txLine (x - 20*sizeX, y + 20*sizeY, x - 50*sizeX*lenghLuch,     y + 50*sizeY*lenghLuch);
-    txLine (x - 20*sizeX, y - 20*sizeY, x - 40*sizeX*lenghLuch,     y - 40*sizeY*lenghLuch);
+    txLine (x + 28*sizeX, y,            x + 60*sizeX * lenghLuch, y);
+    txLine (x - 28*sizeX, y,            x - 60*sizeX * lenghLuch, y);
+    txLine (x,            y + 28*sizeY, x,                        y + 60*sizeY * lenghLuch);
+    txLine (x,            y - 28*sizeY, x,                        y - 80*sizeY * lenghLuch);
+    txLine (x + 20*sizeX, y + 20*sizeY, x + 50*sizeX * lenghLuch, y + 50*sizeY * lenghLuch);
+    txLine (x + 20*sizeX, y - 20*sizeY, x + 50*sizeX * lenghLuch, y - 46*sizeY * lenghLuch);
+    txLine (x - 20*sizeX, y + 20*sizeY, x - 50*sizeX * lenghLuch, y + 50*sizeY * lenghLuch);
+    txLine (x - 20*sizeX, y - 20*sizeY, x - 40*sizeX * lenghLuch, y - 40*sizeY * lenghLuch);
 
     txSetFillColor (RGB (119, 187, 255));
     txEllipse (x - 15*sizeX, y - 5*sizeY + eyes, x -  5*sizeX, y - 15*sizeY - eyes);
@@ -258,7 +209,7 @@ void SolnceDraw_speak ()
     int t = 1;
     while (t <= 10)
         {
-        SolnceDraw (150, 100, 2, 2, 0.1 - t%4, 1.5, t%2 - 1.5, TX_YELLOW);	
+        SolnceDraw (150, 100, 2, 2, 0.1 - t%4, 0.2*t , t%2 - 1.5, TX_YELLOW);	
 
         txSetColor   (TX_ORANGE);
         txSelectFont ("Arial", 40);
@@ -275,7 +226,7 @@ void SolnceDraw_speak ()
             DomDraw (x, 580, 1.5, 1.5, 1, 1, TX_BROWN, TX_BLUE, RGB (rand()%243, rand()%243, rand()%101), 
                      TX_DARKGRAY, TX_CYAN);
 
-            GerlDraw (x + 100, 705, 0.7, 0.7, -0.5, -(x/10) % 2 * 2 - 1, (x/10) % 2 * 2 - 1, 
+            GerlDraw (x + 100, 705, 0.7, 0.7, -0.5, 1, -(x/10) % 2 * 2 - 1, (x/10) % 2 * 2 - 1, 
                       TX_YELLOW, RGB (rand()%207, rand()%159, rand()%255), TX_GREEN);
 
             x += 215;
@@ -382,7 +333,7 @@ void DomDraw (int x, int y, double sizeX, double sizeY,
         }
     }
 	
-void GerlDraw (int x, int y, double sizeX, double sizeY, double smile, 
+void GerlDraw (int x, int y, double sizeX, double sizeY, double smile, double legs,
                double handR, double handL, COLORREF bantikColor,
                COLORREF platieColor, COLORREF glazaColor)
     {
@@ -416,11 +367,9 @@ void GerlDraw (int x, int y, double sizeX, double sizeY, double smile,
     txSetColor (TX_BLACK, 3);
     txLine (x - 40*sizeX, y + (20 + 9*handR)*sizeY, x - 10*sizeX, y + 15*sizeY);
     txLine (x + 10*sizeX, y + 15*sizeY,             x + 40*sizeX, y + (20 - 9*handL)*sizeY);
-    txLine (x - 15*sizeX, y + 55*sizeY,             x - 15*sizeX, y + 85*sizeY);
-    txLine (x - 15*sizeX, y + 85*sizeY,             x - 20*sizeX, y + 85*sizeY);
-    txLine (x + 15*sizeX, y + 55*sizeY,             x + 15*sizeX, y + 85*sizeY);
-    txLine (x + 15*sizeX, y + 85*sizeY,             x + 20*sizeX, y + 85*sizeY);
-	
+    txLine (x - 15*sizeX, y + 55*sizeY,             x - (15 + legs/2)*sizeX, y + 85*sizeY);
+    txLine (x + 15*sizeX, y + 55*sizeY,             x + (15 + legs/2)*sizeX, y + 85*sizeY);
+   	
     txSetColor (platieColor, 3);
     txSetFillColor (platieColor);
     txLine (x,            y,            x + 40*sizeX, y + 55*sizeY);
@@ -453,7 +402,7 @@ void KacheliDraw (int x, int y, double sizeX, double sizeY,
         txLine (x + 100*sizeX, y + 17*sizeY, x + 105*sizeX, y);
         txLine (x - 100*sizeX, y - 20*sizeY, x - 95*sizeX, y-43);	
         }	
-}
+    }
 
 void ElkaDraw (int x, int y, double sizeX, double sizeY, 
                double veterX, double veterY,
@@ -576,9 +525,90 @@ void EndTitles()
         txSelectFont ("Arial", 100);
         txTextOut (290, 700-t*10, "Автор сценария");
         txTextOut (240, 800-t*10, "Пуговкина Татьяна");
+        txTextOut (350, 900-t*10, "город Омск");
 
         txSleep(90);
 
         t++;	
         }	
     }
+    
+void Fon_Rectangle ()
+    {
+    txSetColor     (RGB (151, 255, 255));
+    txSetFillColor (RGB (151, 255, 255));
+    txRectangle (0, 0, 1100, 250);
+
+    txSetColor     (TX_LIGHTGREEN);
+    txSetFillColor (TX_LIGHTGREEN);
+    txRectangle (0, 250, 1100, 800);
+    }
+    
+void Fon_Dom_Derevia (int x_start, int veter, COLORREF okno_Color)
+    {
+    DomDraw_morning (x_start, 580, 1.5, 1.5, 1, 1, TX_BROWN, TX_BLUE, okno_Color, 
+                     TX_DARKGRAY, TX_CYAN);
+
+    ElkaDraw (x_start     -  10, 690,             1,               1,   abs (veter%40 - 20) - 5, 0, TX_GREEN,          TX_BROWN);
+    ElkaDraw (x_start/1.5 + 690, 670 - x_start/8, 0.9 + x_start%2, 1.3, abs (veter%40 - 20) - 5, 0, RGB (75, 121, 43), RGB (191, 96, 0));
+    ElkaDraw (x_start/1.5 +  80, 300 - x_start/4, 1.2 + x_start%2, 1.3, abs (veter%40 - 20) - 5, 0, RGB (55,  88, 31), RGB (130, 65, 0));		    
+    ElkaDraw (x_start/1.5 + 450, 200 + x_start/4, 1   + x_start%2, 1,   abs (veter%40 - 20) - 5, 0, RGB (55,  88, 31), RGB (130, 65, 0));
+
+    DerevoDraw (x_start/1.5 + 740, 450 - x_start/4, 1, 1, 0, 0, TX_BROWN, TX_RED);
+    DerevoDraw (x_start/1.5 + 830, 530 - x_start/4, 1, 1, 0, 0, TX_BROWN, RGB (242, 162, 102));
+	}
+	
+void Gerl_speak (int move_hands, int move_legs)
+    {
+    GerlDraw (140, 705, 0.7, 0.7, -0.5, abs (move_legs%10 - 10) - 5, -(move_hands/10) % 2 * 2 - 1, (move_hands/10) % 2 * 2 - 1, 
+              TX_YELLOW, TX_BLUE, TX_GREEN);
+
+    GerlDraw (315, 705, 0.7, 0.7, -0.5, abs (move_legs%10 - 10) - 5,  (move_hands/10) % 2 * 2 - 1, (move_hands/10) % 2 * 2 - 1, 
+              TX_YELLOW, TX_ORANGE, TX_GREEN);
+	
+	txSetColor   (TX_ORANGE);
+    txSelectFont ("Arial", 20);
+    txTextOut (165, 700, "Доброе утро,");
+    txTextOut (165, 715, "Маша");
+    
+    txSetColor (TX_BLUE);
+    txTextOut (340, 700, "Доброе утро,");
+    txTextOut (340, 715, "Даша");
+    }
+    
+void Girl_walk ()
+    {
+    int t = 0;
+    while (t <= 65)
+        {
+        Fon_Rectangle ();
+
+        int x = 60;
+        while (x <= 650)
+            {
+            Fon_Dom_Derevia (x, x, RGB (255, 128, 192));
+            
+            x += 215;
+            }
+		
+        SolnceDraw (150 + t*2, 100, 2, 2, 0.1 - t%4, t%2, t%2 - 1.5, TX_YELLOW);
+
+        TychkaDraw (  5 + t*2,  60, 1.5, 2 , RGB (121, 206, 227));
+        TychkaDraw (345 + t*2, 100, 1.5, 2 , RGB (121, 206, 227));
+        TychkaDraw (545 + t*2, 100, 1.5, 2 , RGB (121, 206, 227));
+        TychkaDraw (645 + t*2, 100, 1.5, 2 , RGB (121, 206, 227));	
+
+        GerlDraw (140 + 3*t - 20, 705 - 3*t - 10, 0.7, 0.7, -0.5, abs (t%10 - 10) - 5, -(t/10) % 2 * 2 - 1, 1, 
+              TX_YELLOW, TX_BLUE, TX_GREEN);
+        
+        GerlDraw (315 + 4*t - 20, 705 - 4*t - 20, 0.7, 0.7, -0.5, abs (t%10 - 10) - 5,  (t/10) % 2 * 2 - 1, 1, 
+              TX_YELLOW, TX_ORANGE, TX_GREEN);
+        
+        KacheliDraw (400, 420, 1, 1, 2 - t%2 - 1, TX_DARKGRAY);
+		
+		txSleep(150);
+
+        t++;	
+        }
+	}
+

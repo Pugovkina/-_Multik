@@ -609,10 +609,10 @@ void Girl_walk ()
         TychkaDraw (645 + t*2, 100, 1.5, 2 , RGB (121, 206, 227));	
 
         GerlDraw (140 + 3*t - 20, 705 - 3*t - 10, 0.7, 0.7, -0.5, abs (t%10 - 10) - 5, -(t/10) % 2 * 2 - 1, 1, 
-              TX_YELLOW, TX_BLUE, TX_GREEN);
+                  TX_YELLOW, TX_BLUE, TX_GREEN);
         
         GerlDraw (315 + 4*t - 20, 705 - 4*t - 20, 0.7, 0.7, -0.5, abs (t%10 - 10) - 5,  (t/10) % 2 * 2 - 1, 1, 
-              TX_YELLOW, TX_ORANGE, TX_GREEN);
+                  TX_YELLOW, TX_ORANGE, TX_GREEN);
         
         KacheliDraw (400, 420, 1, 1, 1, TX_DARKGRAY);
 		

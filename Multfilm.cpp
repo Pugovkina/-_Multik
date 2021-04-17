@@ -1,3 +1,7 @@
+//===========================================================================
+//                 Tatiana Pugovkina, the first programm
+//                           sity Omsk, Liceum 64
+//===========================================================================
 #include<TXLib.h>
 
 void BeginTitles      ();
@@ -7,11 +11,12 @@ void Day              ();
 void DaySun           ();
 void SolnceDraw_speak ();
 void Fon_Rectangle    ();
+void Girl_third_walk  ();
+void Girl_walk        ();
+
 void Gerl_speak       (int move_hands, int move_legs);
 
 void Fon_Dom_Derevia  (int x_start, int veter, COLORREF okno_Color);
-
-void Girl_walk        ();
 
 void SolnceDraw       (int x, int y, double sizeX, double sizeY, 
                        double eyes, double lenghLuch, double smile, 
@@ -70,8 +75,10 @@ int main ()
     
     Girl_walk ();
 
-    EndTitles ();
-
+    Girl_third_walk ();
+    
+	EndTitles ();
+    
     txEnd ();
 
     return 0;
@@ -523,9 +530,12 @@ void EndTitles()
         txSetFillColor (RGB (0, 64, 128));
   
         txSelectFont ("Arial", 100);
-        txTextOut (290, 700-t*10, "Автор сценария");
-        txTextOut (240, 800-t*10, "Пуговкина Татьяна");
-        txTextOut (350, 900-t*10, "город Омск");
+        txTextOut (290,  700 - t*10, "Автор сценария");
+        txTextOut (240,  800 - t*10, "Пуговкина Татьяна");
+        txTextOut (350,  900 - t*10, "город Омск");
+        
+        txSelectFont ("Arial", 50);
+        txTextOut (150, 1000 - t*10, "продолжение следует...");
 
         txSleep(90);
 
@@ -604,7 +614,7 @@ void Girl_walk ()
         GerlDraw (315 + 4*t - 20, 705 - 4*t - 20, 0.7, 0.7, -0.5, abs (t%10 - 10) - 5,  (t/10) % 2 * 2 - 1, 1, 
               TX_YELLOW, TX_ORANGE, TX_GREEN);
         
-        KacheliDraw (400, 420, 1, 1, 2 - t%2 - 1, TX_DARKGRAY);
+        KacheliDraw (400, 420, 1, 1, 1, TX_DARKGRAY);
 		
 		txSleep(150);
 
@@ -612,3 +622,45 @@ void Girl_walk ()
         }
     }
 
+void Girl_third_walk ()
+    {
+    int t = 0;
+    while (t <= 65)
+        {
+        Fon_Rectangle ();
+
+        int x = 60;
+        while (x <= 650)
+            {
+            Fon_Dom_Derevia (x, x, RGB (255, 128, 192));
+            
+            x += 215;
+            }
+		
+        SolnceDraw (150 + t*2, 100, 2, 2, 0.1 - t%4, t%2, t%2 - 1.5, TX_YELLOW);
+
+        TychkaDraw (  5 + t*2,  60, 1.5, 2 , RGB (121, 206, 227));
+        TychkaDraw (345 + t*2, 100, 1.5, 2 , RGB (121, 206, 227));
+        TychkaDraw (545 + t*2, 100, 1.5, 2 , RGB (121, 206, 227));
+        TychkaDraw (645 + t*2, 100, 1.5, 2 , RGB (121, 206, 227));	
+
+        GerlDraw (400 - t - 20, 400, 0.7, 0.7, 1 - t%2 -0.5, abs (t%10 - 10) - 5, -(t/10) % 2 * 2 - 1, 1, 
+              TX_YELLOW, TX_BLUE, TX_GREEN);
+        
+        GerlDraw (540 - t, 410, 0.7, 0.7, 1 - t%2 -0.5, abs (t%10 - 10) - 5,  (t/10) % 2 * 2 - 1, 1, 
+              TX_YELLOW, TX_ORANGE, TX_GREEN);
+        
+        KacheliDraw (400, 420, 1, 1, 2 - t%2 - 1, TX_DARKGRAY);
+		
+		GerlDraw (690 - t, 705, 0.7, 0.7, 1 - t%2 -0.5, abs (t%10 - 10) - 5,  (t/10) % 2 * 2 - 1, 1, 
+                  TX_YELLOW, TX_LIGHTRED, TX_GREEN);
+        
+		txSetColor   (TX_ORANGE);
+        txSelectFont ("Arial", 20);
+        txTextOut (600 - t, 700, "Подружки!!!");
+        
+		txSleep(150);
+
+        t++;	
+        }
+    }

@@ -1,4 +1,4 @@
-#include<TXLib.h>
+п»ї#include<TXLib.h>
 
 void BeginTitles      ();
 void EndTitles        ();
@@ -79,8 +79,8 @@ void BeginTitles ()
         txSetFillColor (RGB (0, 64, 128));
 
         txSelectFont ("Arial", 100);
-        txTextOut (350, 700 - t*10, "Мульфильм");
-        txTextOut (200, 800 - t*10, "Прогулка с друзьями");
+        txTextOut (350, 700 - t*10, "РњСѓР»СЊС„РёР»СЊРј");
+        txTextOut (200, 800 - t*10, "РџСЂРѕРіСѓР»РєР° СЃ РґСЂСѓР·СЊСЏРјРё");
 
         txSleep(100);
 
@@ -206,15 +206,15 @@ void DaySun ()
 
         txSetColor   (TX_ORANGE);
         txSelectFont ("Arial", 20);
-        txTextOut (160, 680, "С Добрым утром,");
-        txTextOut (160, 695, "подружка");
+        txTextOut (160, 680, "РЎ Р”РѕР±СЂС‹Рј СѓС‚СЂРѕРј,");
+        txTextOut (160, 695, "РїРѕРґСЂСѓР¶РєР°");
 
         GerlDraw (315, 705, 0.7, 0.7, -0.5, (t/10) % 2 * 2 - 1, (t/10) % 2 * 2 - 1, 
                   TX_YELLOW, TX_ORANGE, TX_GREEN);
 
         txSetColor   (TX_BLUE);
-        txTextOut (335, 690, "С Добрым утром,");
-        txTextOut (335, 705, "спасибо");
+        txTextOut (335, 690, "РЎ Р”РѕР±СЂС‹Рј СѓС‚СЂРѕРј,");
+        txTextOut (335, 705, "СЃРїР°СЃРёР±Рѕ");
 
         txSleep(150);
 
@@ -262,7 +262,7 @@ void SolnceDraw_speak ()
 
         txSetColor   (TX_ORANGE);
         txSelectFont ("Arial", 40);
-        txTextOut (185, 120, "С Добрым утром");
+        txTextOut (185, 120, "РЎ Р”РѕР±СЂС‹Рј СѓС‚СЂРѕРј");
 
         txSleep(200);
 
@@ -574,8 +574,8 @@ void EndTitles()
         txSetFillColor (RGB (0, 64, 128));
   
         txSelectFont ("Arial", 100);
-        txTextOut (290, 700-t*10, "Автор сценария");
-        txTextOut (240, 800-t*10, "Пуговкина Татьяна");
+        txTextOut (290, 700-t*10, "РђРІС‚РѕСЂ СЃС†РµРЅР°СЂРёСЏ");
+        txTextOut (240, 800-t*10, "РџСѓРіРѕРІРєРёРЅР° РўР°С‚СЊСЏРЅР°");
 
         txSleep(90);
 

@@ -9,7 +9,7 @@ void SolnceDraw_speak ();
 
 void SolnceDraw        (int x, int y, double sizeX, double sizeY, 
                         double eyes, double lenghLuch, double smile, 
-						COLORREF sunColor); 
+                        COLORREF sunColor); 
 				      
 void TychkaDraw        (int x, int y, double sizeX, double sizeY, 
                         COLORREF tychaColor);
@@ -17,36 +17,36 @@ void TychkaDraw        (int x, int y, double sizeX, double sizeY,
 void DomDraw_morning   (int x, int y, double sizeX, double sizeY, 
                         double opendverX, double opendverY,
                         COLORREF domColor, COLORREF krischaColor,
-						COLORREF oknoColor, COLORREF trubaColor,
-						COLORREF dverColor);
+                        COLORREF oknoColor, COLORREF trubaColor,
+                        COLORREF dverColor);
 			          
 void DomDraw           (int x, int y, double sizeX, double sizeY, 
                         double opendverX, double opendverY,
-						COLORREF domColor, COLORREF krischaColor,
-						COLORREF oknoColor, COLORREF trubaColor,
-						COLORREF dverColor);
+                        COLORREF domColor, COLORREF krischaColor,
+                        COLORREF oknoColor, COLORREF trubaColor,
+                        COLORREF dverColor);
 			          
 void GerlDraw          (int x, int y, double sizeX, double sizeY, 
                         double smile, double handR, double handL, 
-						COLORREF bantikColor, COLORREF platieColor, 
-						COLORREF glazaColor);
+                        COLORREF bantikColor, COLORREF platieColor, 
+                        COLORREF glazaColor);
 			          
 void KacheliDraw       (int x, int y, double sizeX, double sizeY, 
                         double height_kacheli, COLORREF kacheliColor);
 				      
 void ElkaDraw          (int x, int y, double sizeX, double sizeY, 
                         double veterX, double veterY,
-						COLORREF hvoiaColor, COLORREF stvolColor);
+                        COLORREF hvoiaColor, COLORREF stvolColor);
 			          
 void DerevoDraw        (int x, int y, double sizeX, double sizeY,
                         double veterX, double veterY,
-						COLORREF stvolColor, COLORREF appleColor);
+                        COLORREF stvolColor, COLORREF appleColor);
                       
 void Rain              (int x, int y, double lenght_Rain);
 
 void DerevoDraw_Rain   (int x, int y, double sizeX, double sizeY,
                         double veterX, double veterY,
-						COLORREF stvolColor, COLORREF appleColor);
+                        COLORREF stvolColor, COLORREF appleColor);
                       
 int main ()
     {
@@ -105,7 +105,7 @@ void Morning ()
         while (x <= 650)
             {
             DomDraw_morning (x, 580, 1.5, 1.5, 1 - x%5, 1 - x%5, TX_BROWN, TX_BLUE, 
-		                     RGB (134, 134, 134), TX_DARKGRAY, TX_CYAN);
+                             RGB (134, 134, 134), TX_DARKGRAY, TX_CYAN);
 
             TychkaDraw (x + 340, 100, 1.5 - x%5, 2 - x%5, RGB (121, 206, 227));
 
@@ -294,8 +294,8 @@ void TychkaDraw (int x, int y, double sizeX, double sizeY,
 	
 void DomDraw_morning (int x, int y, double sizeX, double sizeY, 
                       double opendverX, double opendverY, COLORREF domColor, 
-					  COLORREF krischaColor, COLORREF oknoColor, 
-					  COLORREF trubaColor, COLORREF dverColor)
+                      COLORREF krischaColor, COLORREF oknoColor, 
+                      COLORREF trubaColor, COLORREF dverColor)
     {
     txSetColor (TX_BLACK, 3);
 
@@ -332,8 +332,8 @@ void DomDraw_morning (int x, int y, double sizeX, double sizeY,
 
 void DomDraw (int x, int y, double sizeX, double sizeY, 
               double opendverX, double opendverY, COLORREF domColor, 
-			  COLORREF krischaColor, COLORREF oknoColor, 
-			  COLORREF trubaColor, COLORREF dverColor)
+              COLORREF krischaColor, COLORREF oknoColor, 
+              COLORREF trubaColor, COLORREF dverColor)
     {
     txSetColor (TX_BLACK, 3);
 
@@ -457,7 +457,7 @@ void KacheliDraw (int x, int y, double sizeX, double sizeY,
 
 void ElkaDraw (int x, int y, double sizeX, double sizeY, 
                double veterX, double veterY,
-			   COLORREF hvoiaColor, COLORREF stvolColor)
+               COLORREF hvoiaColor, COLORREF stvolColor)
     {
     txSetColor (hvoiaColor, 3);
     txSetFillColor (hvoiaColor);
@@ -503,7 +503,7 @@ void DerevoDraw (int x, int y, double sizeX, double sizeY,
     txSetColor (appleColor, 3);
     txSetFillColor (appleColor);
     
-	txEllipse (x - 21*sizeX + 0.9*veterX, y + 37*sizeY, x - 40*sizeX, y + 58*sizeY - 0.8*veterY);
+    txEllipse (x - 21*sizeX + 0.9*veterX, y + 37*sizeY, x - 40*sizeX, y + 58*sizeY - 0.8*veterY);
     txEllipse (x + 14*sizeX,              y + 28*sizeY, x + 32*sizeX, y + 45*sizeY);
     txEllipse (x + 34*sizeX,              y +  4*sizeY, x + 50*sizeX, y + 18*sizeY);
     }
@@ -515,17 +515,17 @@ void Rain (int x, int y, double lenght_Rain)
     for (int Kolichestvo_Rain = 1; Kolichestvo_Rain <= 8; Kolichestvo_Rain ++)
         {
         txLine (x,                         y,                     
-		        x -  15 +     lenght_Rain, y +  30 +     lenght_Rain);
+                x -  15 +     lenght_Rain, y +  30 +     lenght_Rain);
         txLine (x -  19 +     lenght_Rain, y +  38 +     lenght_Rain, 
-		        x -  30 +     lenght_Rain, y +  68 - 0.5*lenght_Rain);
+                x -  30 +     lenght_Rain, y +  68 - 0.5*lenght_Rain);
         txLine (x -  35 +     lenght_Rain, y +  72 +     lenght_Rain, 
-		        x -  53 + 2.3*lenght_Rain, y + 116 - 2.3*lenght_Rain);	
+                x -  53 + 2.3*lenght_Rain, y + 116 - 2.3*lenght_Rain);	
         txLine (x -  59 +     lenght_Rain, y + 123 +     lenght_Rain, 
-		        x -  72 + 1.8*lenght_Rain, y + 156 - 1.8*lenght_Rain);
+                x -  72 + 1.8*lenght_Rain, y + 156 - 1.8*lenght_Rain);
         txLine (x -  86 +     lenght_Rain, y + 170 +     lenght_Rain, 
-		        x - 100 + 3.0*lenght_Rain, y + 200 - 3.0*lenght_Rain);
+                x - 100 + 3.0*lenght_Rain, y + 200 - 3.0*lenght_Rain);
         
-		x += 20;
+        x += 20;
         }
     }
 	
@@ -559,8 +559,7 @@ void DerevoDraw_Rain (int x, int y, double sizeX, double sizeY,
     txSetColor (TX_LIGHTGREEN, 3);
     txSetFillColor (TX_LIGHTGREEN);
     txEllipse (918, 288, 948, 315);
-  //txLine (933, 288, 933, 275);
-
+  
     txSetFillColor (TX_ORANGE);
     txEllipse (955, 440, 1000, 465);
     }

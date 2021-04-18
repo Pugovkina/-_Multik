@@ -1,6 +1,7 @@
 //===========================================================================
-//                 Tatiana Pugovkina, the first programm
-//                           sity Omsk, Liceum 64
+//                 Tatiana Pugovkina, 
+//                 the first programm
+//                sity Omsk, Liceum 64
 //===========================================================================
 #include<TXLib.h>
 

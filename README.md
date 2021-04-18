@@ -22,4 +22,5 @@ __Функции__<p align = "center"><img src="https://user-images.githubuserco
 - что такое _прототип_  
 - что такое _аргументы_, и как правильно им давать имена...  
 #### И, конечно, с нами в дороге всегда должны рядом идти знания математики и физики, чтобы рассчитать траекторию движения объектов  
-<p align = "center"><img src="https://j.gifs.com/mOlvDn.gif" width="150" height="200" /></p>
+<p align = "center"><img src="https://j.gifs.com/mOlvDn.gif" width="150" height="200" width="200"/></p>  
+### Если готов помочь в решении задачи, буду рада видеть в своей команде!!!

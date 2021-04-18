@@ -535,7 +535,7 @@ void EndTitles()
         txTextOut (350,  900 - t*10, "город Омск");
         
         txSelectFont ("Arial", 50);
-        txTextOut (150, 1000 - t*10, "продолжение следует...");
+        txTextOut (355, 1000 - t*10, "продолжение следует...");
 
         txSleep(90);
 

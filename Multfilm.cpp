@@ -626,7 +626,7 @@ void Girl_walk ()
 void Girl_third_walk ()
     {
     int t = 0;
-    while (t <= 65)
+    while (t <= 30)
         {
         Fon_Rectangle ();
 
@@ -659,6 +659,8 @@ void Girl_third_walk ()
         txSetColor   (TX_ORANGE);
         txSelectFont ("Arial", 20);
         txTextOut (600 - t, 700, "Подружки!!!");
+        
+        Rain (580 + t*2, 150, 5 * (t%2));
         
         txSleep(150);
 

@@ -1,8 +1,8 @@
 //{===========================================================================
 //!@brief	 Cartoon "Walk with girlfriends"
-//!				the first programm on C++        
-//!@author	       Tatiana Pugovkina, 
-//!				  sity Omsk, Liceum 64
+//!				the first programm on C++
+//!@author	       Tatiana Pugovkina,
+//!				  sity Omsk, Lyceum 64
 //!@date				  2021
 //}===========================================================================
 
@@ -14,38 +14,44 @@ void Morning ();
 int main()
 	{
 	txCreateWindow (1100, 800);
-	
+
 	txBegin ();
-	
+
 	Titles (RGB (89, 184, 33), TX_WHITE, "Мультфильм", "Прогулка c подружками");
-	
+
 	Morning ();
-	
+
 	Titles (RGB (89, 184, 33), TX_WHITE, "Автор сценария", "Пуговкина Татьяна");
-	
+
 	txEnd ();
-	
-	return 0;	
+
+	return 0;
 	}
 
 void Morning ()
 	{
 	Fon_Rectangle (RGB (151, 255, 255), TX_LIGHTGREEN);
-	
+
 	for (int kolichestvo = 0; kolichestvo <= 50; kolichestvo ++)
-		Flowers (rand() % 1100, 260 + rand() % 800, 
-				RGB ( 60 + rand() % 80, 190 + rand() % 30, 200 + rand() %  40), 
+		Flowers (rand() % 1100, 260 + rand() % 800,
+				RGB ( 60 + rand() % 80, 190 + rand() % 30, 200 + rand() %  40),
 				RGB (210 + rand() % 11, 210 + rand() % 11,   0 + rand() % 166));
-	    
-	for (int kolichestvo = 0; kolichestvo <= 7; kolichestvo ++)	
+
+	for (int kolichestvo = 0; kolichestvo <= 7; kolichestvo ++)
 		CloudDraw (200 + rand() % 1000, 230 - rand() % 450, 1, 1, RGB (160, 217, 250));
-	
+
 	SolnceDraw (150, 100, 1, 1, -2.5, 1, 1, TX_YELLOW);
-	
-	DomDraw_morning (60, 580, 1.2, 1.2, 1.5, 1.5, TX_BROWN, TX_BLUE, RGB (134, 134, 134), TX_DARKGRAY, TX_YELLOW);
-			
-	txSleep (1000);
+
+	int koordinata = 50;
+	while (koordinata <= 450)
+	    {
+	    DomDraw (koordinata, 650 - koordinata*0.7, 2 - koordinata%2, 2 - koordinata%2, 1.5, 1.5, TX_BROWN, TX_BLUE, RGB (134, 134, 134), TX_DARKGRAY, TX_YELLOW);
+
+	    koordinata += 200;
+	    }
+
+    txSleep (1000);
     }
-  
+
 
 

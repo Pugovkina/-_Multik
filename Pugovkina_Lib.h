@@ -1,8 +1,8 @@
 //{===========================================================================
 //! @brief	         Function library
-//!			           
-//! @author	        Tatiana Pugovkina, 
-//!				  sity Omsk, Liceum 64
+//!
+//! @author	        Tatiana Pugovkina,
+//!				  sity Omsk, Lyceum 64
 //! @date				  2021
 //!
 //! @mainpage  Функции:
@@ -24,16 +24,14 @@ void Flowers (int flower_centerX, int flower_centerY, COLORREF flower_center_Col
 
 void Titles (COLORREF fon_Color, COLORREF text_Color, char text_first_string[], char text_second_string[]);
 
-void SolnceDraw (int x, int y, double sizeX, double sizeY, double eyes, double lenghLuch, double smile, COLORREF sunColor);
+void SolnceDraw (double x, double y, double sizeX, double sizeY, double eyes, double lenghLuch, double smile, COLORREF sunColor);
 
 void CloudDraw (int x, int y, double sizeX, double sizeY, COLORREF cloudColor);
 
-void DomDraw_morning (int x, int y, double sizeX, double sizeY, double opendverX, double opendverY,
-			          COLORREF domColor, COLORREF krischaColor, COLORREF oknoColor, COLORREF trubaColor, 
-			          COLORREF dverColor)
+void DomDraw (int x, double y, double sizeX, double sizeY, double opendverX, double opendverY, COLORREF domColor, COLORREF krischaColor, COLORREF oknoColor, COLORREF trubaColor, COLORREF dverColor);
 
 //{-------------------------------------------------------------------------------------------------------------
-//! Разделяет экран на две части: 1я-часть - небо и 2я-часть - "земля"
+//! Разделяет экран на две части: 1я-часть - небо и 2я-часть - "земля"<br>
 //! Разделение происходит по линии с координатами (0, 250, 1100, 250)
 //!
 //! @param nebo_Color    nebo_Color   - цвет неба
@@ -52,31 +50,31 @@ void Fon_Rectangle (COLORREF nebo_Color, COLORREF zemlia_Color)
 	{
     txSetColor     (nebo_Color);
     txSetFillColor (nebo_Color);
-    
+
     txRectangle (0, 0, 1100, 250);
 
     txSetColor     (zemlia_Color);
     txSetFillColor (zemlia_Color);
-    
+
     txRectangle (0, 250, 1100, 800);
 	}
 
 //{-------------------------------------------------------------------------------------------------------------
 //! Рисует цветок
-//! Рисование цветка: 5 лепестков и серединка
+//! <br>Рисование цветка: 5 лепестков и серединка
 //!
 //! @param flower_centerX       flower_centerX      - координата X центра середины цветка
 //! @param flower_centerY       flower_centerY      - координата Y центра середины цветка
 //! @param flower_center_Color  flower_center_Color - цвет серединки цветка
 //! @param lepestok_Color       lepestok_Color      - цвет лепестков цветка
-//! 
-//! @note                       Сначала рисуются лепестки, начиная с верхнего левого, затем рисуется серединка.
-//!                             Цвет лепестков выбирается случайным образом в диапазоне от светло-жёлтого до тёмно-жёлтого;
+//!
+//! @note                       Сначала рисуются лепестки, начиная с верхнего левого, затем рисуется серединка.<br>
+//!                             Цвет лепестков выбирается случайным образом в диапазоне от светло-жёлтого до тёмно-жёлтого;<br>
 //!								цвет серединки - в диапазоне от светло-голубого до тёмно-голубого
 //!
 //! @par			            Пример использования:
 //! @code
-//! 							Flowers (300, 260, RGB ( 60 + rand() % 80, 190 + rand() % 30, 200 + rand() %  40), 
+//! 							Flowers (300, 260, RGB ( 60 + rand() % 80, 190 + rand() % 30, 200 + rand() %  40),
 //! 											   RGB (210 + rand() % 11, 210 + rand() % 11,   0 + rand() % 166));
 //! @endcode
 //}-------------------------------------------------------------------------------------------------------------
@@ -85,40 +83,40 @@ void Flowers (int flower_centerX, int flower_centerY, COLORREF flower_center_Col
 	{
     txSetColor     (lepestok_Color);
     txSetFillColor (lepestok_Color);
-    
+
     txCircle (flower_centerX + 3, flower_centerY - 5, 5);
     txCircle (flower_centerX + 5, flower_centerY + 2, 5);
     txCircle (flower_centerX,     flower_centerY + 5, 5);
     txCircle (flower_centerX - 5, flower_centerY + 2, 5);
     txCircle (flower_centerX - 3, flower_centerY - 5, 5);
-    
+
     txSetColor     (flower_center_Color);
     txSetFillColor (flower_center_Color);
-    
+
     txCircle (flower_centerX, flower_centerY, 3);
 	}
 
 //{-------------------------------------------------------------------------------------------------------------
-//! Выводит надпись на экран.  
-//! Надпись выводится снизу вверх, состоит из 2-х строчек. 
+//! Выводит надпись на экран.  <br>
+//! Надпись выводится снизу вверх, состоит из 2-х строчек. <br>
 //! Текст типа Arial, размер шрифта - 100
 //!
 //! @param fon_Color             fon_Color            - задаёт цвет фона
 //! @param text_Color            text_Color           - задаёт цвет текста
 //! @param text_first_string[]   text_first_string[]  - выводит текст на первой строчке
 //! @param text_second_string[]  text_second_string[] - выводит текст на второй строчке
-//! 
-//! @note                        Текст выводится по центру относительно координаты Х = 550.
-//!                              Текст появляется снизу экрана, начиная с координаты по Y  
-//!                              для первой строки: Y = 700, 
-//!                              для второй строки: Y = 800
+//!
+//! @note                        Текст выводится по центру относительно координаты Х = 550.<br>
+//!                              Текст появляется снизу экрана, начиная с координаты по Y  <br>
+//!                              для первой строки: Y = 700,<br>
+//!                              для второй строки: Y = 800 <br>
 //!                              и движется вверх по координате Y, до Y = 350 (первая строчка)
 //!
-//! @see                         txSetTextAlign ()
+//! @see                         <a href="http://storage.ded32.net.ru/Lib/TX/TXUpdate/Doc/HTML.ru/a00082.htm#ga09938df8859ae8b62638a3af76ee6735">txSetTextAlign ()</a>
 //!
 //! @par			             Пример использования:
 //! @code
-//!                              Titles (RGB (89, 184, 33), TX_WHITE, "Мультфильм", "Прогулка c подружками");							
+//!                              Titles (RGB (89, 184, 33), TX_WHITE, "Мультфильм", "Прогулка c подружками");
 //! @endcode
 //}-------------------------------------------------------------------------------------------------------------
 
@@ -132,45 +130,47 @@ void Titles (COLORREF fon_Color, COLORREF text_Color, char text_first_string[], 
         txSetFillColor (fon_Color);
 
         txSetTextAlign (TA_CENTER);
-        
+
 		txSelectFont ("Arial", 100);
         txTextOut (550, 700 - t*10, text_first_string);
         txTextOut (550, 800 - t*10, text_second_string);
-        
+
         txSetTextAlign ();
-        
+
         txSleep (90);
 
-        t++;	
-        }	
+        t++;
+        }
     }
 
 //{-------------------------------------------------------------------------------------------------------------
 //! Рисует солнце с лучиками
-//! 
+//!
 //! @param x          x         - Х-координата центра солнца
 //! @param y          y         - Y-координата центра солнца
 //! @param sizeX      sizeX     - изменение размера по координате Х
 //! @param sizeY      sizeY     - изменение размера по координате Y
 //! @param eyes       eyes      - изменение размера глаз
 //! @param lenghLuch  lenghLuch - длина луча
-//! @param smile      smile     - ширина улыбки 
+//! @param smile      smile     - ширина улыбки
 //! @param sunColor   sunColor  - цвет солнца
-//! 
-//! @note                        Солнце рисуется с помощью элипса. Радиус солнца - 30 пикселей. У солнца - 8 лучиков.
-//!                              Для рисования носа используется полигон.    
-//!                              Для рисования рта и глаз используется элипс. 
-//!                              При изменении значения аргумента smile (-3 до 1) можно сделать, чтобы солнце - "разговаривало"
+//!
+//! @note                        Солнце рисуется с помощью эллипса. Радиус солнца - 30 пикселей. У солнца - 8 лучиков.<br>
+//!                              Для рисования носа используется полигон.    <br>
+//!                              Для рисования рта и глаз используется эллипс. <br>
+//!                              При изменении значения аргумента smile (-3 до 1) можно сделать, чтобы солнце - "разговаривало"<br>
 //!                              При изменении значения аргумента eyes (-2.5 до 2.5) можно сделать, чтобы солнце - "мигало"
-//!                              
+//!
+//! @see                         <a href="http://storage.ded32.net.ru/Lib/TX/TXUpdate/Doc/HTML.ru/a00082.htm#gaaf82e7c5a0fd06548f42c757f73d3dae">txEllipse ()</a> &nbsp;&nbsp;&nbsp;
+//!                              <a href="http://storage.ded32.net.ru/Lib/TX/TXUpdate/Doc/HTML.ru/a00082.htm#gacbbb638439ad7ba88804178516019fb1">txPolygon ()</a>
+//!
 //! @par			             Пример использования:
 //! @code
-//!                              SolnceDraw (150, 100, 1, 1, -2, 1, 0.1, TX_YELLOW);                             							
+//!                              SolnceDraw (150, 100, 1, 1, -2, 1, 0.1, TX_YELLOW);
 //! @endcode
-//! см.также элипс, линия. полигон
 //}-------------------------------------------------------------------------------------------------------------
 
-void SolnceDraw (int x, int y, double sizeX, double sizeY, double eyes, double lenghLuch, double smile, COLORREF sunColor)
+void SolnceDraw (double x, double y, double sizeX, double sizeY, double eyes, double lenghLuch, double smile, COLORREF sunColor)
     {
     txSetColor     (sunColor, 3);
     txSetFillColor (sunColor);
@@ -191,8 +191,8 @@ void SolnceDraw (int x, int y, double sizeX, double sizeY, double eyes, double l
     txEllipse (x +  5*sizeX, y - 5*sizeY + eyes, x + 15*sizeX, y - 15*sizeY - eyes);
 
     txSetFillColor (TX_BROWN);
-    POINT Nos[] = {{x - 8*sizeX, y - 1*sizeY}, 
-                   {x + 8*sizeX, y - 1*sizeY}, 
+    POINT Nos[] = {{x - 8*sizeX, y - 1*sizeY},
+                   {x + 8*sizeX, y - 1*sizeY},
                    {x + 1*sizeX, y + 8*sizeY}};
     txPolygon (Nos, 3);
 
@@ -202,18 +202,18 @@ void SolnceDraw (int x, int y, double sizeX, double sizeY, double eyes, double l
 
 //{-------------------------------------------------------------------------------------------------------------
 //! Рисует облако
-//! 
+//!
 //! @param x           x          - Х-координата центра облака
 //! @param y           y          - Y-координата центра облака
 //! @param sizeX       sizeX      - изменение размера по координате Х
 //! @param sizeY       sizeY      - изменение размера по координате Y
 //! @param cloudColor  cloudColor - цвет облака
-//! 
-//! @note                        Облако рисуется с помощью 3-х элипсов. 
-//!                              
+//!
+//! @note                        Облако рисуется с помощью 3-х эллипсов.
+//!
 //! @par			             Пример использования:
 //! @code
-//!                              CloudDraw (200, 230, 1, 1.2, RGB (160, 217, 250));                             							
+//!                              CloudDraw (200, 230, 1, 1.2, RGB (160, 217, 250));
 //! @endcode
 //}-------------------------------------------------------------------------------------------------------------
 
@@ -221,7 +221,7 @@ void CloudDraw (int x, int y, double sizeX, double sizeY, COLORREF cloudColor)
     {
     txSetColor     (cloudColor);
     txSetFillColor (cloudColor);
-        
+
 	txEllipse (x - 60*sizeX, y - 20*sizeY, x - 20*sizeX, y + 20*sizeY);
     txEllipse (x - 30*sizeX, y - 30*sizeY, x + 30*sizeX, y + 30*sizeY);
     txEllipse (x + 20*sizeX, y - 20*sizeY, x + 65*sizeX, y + 30*sizeY);
@@ -229,57 +229,59 @@ void CloudDraw (int x, int y, double sizeX, double sizeY, COLORREF cloudColor)
 
 //{-------------------------------------------------------------------------------------------------------------
 //! Рисует дом с треугольной крышей и трубой
-//! 
-//! @param x           x          - Х-координата центра облака
-//! @param y           y          - Y-координата центра облака
-//! @param sizeX       sizeX      - изменение размера по координате Х
-//! @param sizeY       sizeY      - изменение размера по координате Y
-//! @param cloudColor  cloudColor - цвет облака
-//! 
-//! @note                        Облако рисуется с помощью 3-х элипсов. 
-//!                              
+//!
+//! @param x             x            - Х-начальная координата рисования дома
+//! @param y             y            - Y-начальная координата рисования дома
+//! @param sizeX         sizeX        - изменение размера дома по координате Х
+//! @param sizeY         sizeY        - изменение размера дома по координате Y
+//! @param opendverX     opendverX    - координата X - "открытие" двери
+//! @param opendverY     opendverY    - координата Y - "открытие" двери
+//! @param domColor      domColor     - цвет дома
+//! @param krischaColor  krischaColor - цвет крыши
+//! @param oknoColor     oknoColor    - цвет окна
+//! @param trubaColor    trubaColor   - цвет трубы
+//! @param dverColor     dverColor    - цвет двери
+//!
+//! @note
+//!
 //! @par			             Пример использования:
 //! @code
-//!                              CloudDraw (200, 230, 1, 1.2, RGB (160, 217, 250));                             							
+//!
 //! @endcode
 //}-------------------------------------------------------------------------------------------------------------
 
-void DomDraw_morning (int x, int y, double sizeX, double sizeY, 
-                      double opendverX, double opendverY,
-			          COLORREF domColor, COLORREF krischaColor, 
-			          COLORREF oknoColor, COLORREF trubaColor, 
-			          COLORREF dverColor)
+void DomDraw (int x, double y, double sizeX, double sizeY, double opendverX, double opendverY, COLORREF domColor, COLORREF krischaColor, COLORREF oknoColor, COLORREF trubaColor, COLORREF dverColor)
 	{
 	txSetColor (TX_BLACK, 3);
-	
+
 	txSetFillColor (domColor);
 	txRectangle (x,            y,            x + 80*sizeX, y + 80*sizeY);
 	txRectangle (x + 60*sizeX, y + 40*sizeY, x + 80*sizeX, y + 80*sizeY);
-	
+
 	txSetFillColor (krischaColor);
 	txLine      (x + 40*sizeX, y - 40*sizeY, x - 10*sizeX, y + 10*sizeY);
 	txLine      (x + 40*sizeX, y - 40*sizeY, x + 90*sizeX, y + 10*sizeY);
 	txFloodFill (x + 40*sizeX, y - 10*sizeY);
-	
+
 	txSetFillColor (trubaColor);
-	POINT Tryba[] = {{x + 60*sizeX, y - 20*sizeY}, 
-	                 {x + 60*sizeX, y - 50*sizeY}, 
-					 {x + 80*sizeX, y - 50*sizeY}, 
+	POINT Tryba[] = {{x + 60*sizeX, y - 20*sizeY},
+	                 {x + 60*sizeX, y - 50*sizeY},
+					 {x + 80*sizeX, y - 50*sizeY},
 					 {x + 80*sizeX, y +  1*sizeY}};
 	txPolygon (Tryba, 4);
-	
+
 	txSetFillColor (oknoColor);
 	txRectangle (x + 20*sizeX, y + 20*sizeY, x + 50*sizeX, y + 40*sizeY);
-	
+
 	txSetFillColor (dverColor);
-	POINT Dver[] = {{x + 60*sizeX,             y + 40*sizeY}, 
-	                {x + 60*sizeX,             y + 80*sizeY}, 
-					{x + 80*sizeX - opendverX, y + 80*sizeY + opendverY}, 
+	POINT Dver[] = {{x + 60*sizeX,             y + 40*sizeY},
+	                {x + 60*sizeX,             y + 80*sizeY},
+					{x + 80*sizeX - opendverX, y + 80*sizeY + opendverY},
 					{x + 80*sizeX - opendverX, y + 40*sizeY + opendverY}};
 	txPolygon (Dver, 4);
 
 	txSetFillColor (TX_BLACK);
-	txEllipse (x + 70*sizeX - opendverX/2, y + 55*sizeY + opendverY/2, 
+	txEllipse (x + 70*sizeX - opendverX/2, y + 55*sizeY + opendverY/2,
 			   x + 75*sizeX - opendverX/2, y + 65*sizeY + opendverY/2);
 	}
 

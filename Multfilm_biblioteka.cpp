@@ -7,7 +7,7 @@
 //}===========================================================================
 
 #include <TXLib.h>
-#include "Pugovkina.h"
+#include "Pugovkina_Lib.h"
 
 void Morning ();
 
@@ -41,6 +41,8 @@ void Morning ()
 		CloudDraw (200 + rand() % 1000, 230 - rand() % 450, 1, 1, RGB (160, 217, 250));
 	
 	SolnceDraw (150, 100, 1, 1, -2.5, 1, 1, TX_YELLOW);
+	
+	DomDraw_morning (60, 580, 1.2, 1.2, 1.5, 1.5, TX_BROWN, TX_BLUE, RGB (134, 134, 134), TX_DARKGRAY, TX_YELLOW);
 			
 	txSleep (1000);
     }

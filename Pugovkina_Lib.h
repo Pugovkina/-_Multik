@@ -168,6 +168,12 @@ void Titles (COLORREF fon_Color, COLORREF text_Color, char text_first_string[], 
 //! @code
 //!                              SolnceDraw (150, 100, 1, 1, -2, 1, 0.1, TX_YELLOW);
 //! @endcode
+//!
+//! @section           Screenshots                  Скриншоты
+//! @table
+//! @tr @image html solnca.jpg
+//! @td
+//! @endtable
 //}-------------------------------------------------------------------------------------------------------------
 
 void SolnceDraw (double x, double y, double sizeX, double sizeY, double eyes, double lenghLuch, double smile, COLORREF sunColor)

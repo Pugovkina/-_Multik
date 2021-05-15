@@ -1,0 +1,58 @@
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\DNS\Documents\GitHub\KPK_Multik\Exampl_kacheli.exe, файл: C:\TX\TXLib.h, строка: 8626, функция: HWND__* {anonymous}::TX::txCreateWindow(double, double, bool),
+
+Сообщение: Окно рисования уже создано!
+
+#1: TXLib [Ver: 00173a, Rev: 170, Date: 2021-05-25 03:35:06 +0400], Instance: 0x005092F8 (32-bit), Flags: CMdRe0, Thread: 0xC88 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0040356E in C:\Users\DNS\Documents\GitHub\KPK_Multik\Exampl_kacheli.exe: txCreateWindow() at C:/TX/TXLib.h (8626)
+
+# 1 0x0042FF97 in C:\Users\DNS\Documents\GitHub\KPK_Multik\Exampl_kacheli.exe: main() at C:/Users/DNS/Documents/GitHub/KPK_Multik/Exampl_kacheli.cpp (10):
+
+      8:     while (t <= 65)
+      9:         {
+=>   10:       txCreateWindow (1100, 800);
+     11:     Fon_Rectangle (RGB (151, 255, 255), TX_LIGHTGREEN);
+     12: 
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in HWND__* {anonymous}::TX::txCreateWindow(double, double, bool) at C:\TX\TXLib.h (8626):
+
+   8624:         {
+   8625: $       SetLastErrorEx (ERROR_INVALID_DATA, 0);
+=> 8626: $       _TX_ON_DEBUG (TX_ERROR ("\a" "Окно рисования уже создано!"));
+   8627: $       return wnd;
+   8628:         }
+
+# 1 in int main() at C:\Users\DNS\Documents\GitHub\KPK_Multik\Exampl_kacheli.cpp (10):
+
+      8:     while (t <= 65)
+      9:         {
+=>   10:       txCreateWindow (1100, 800);
+     11:     Fon_Rectangle (RGB (151, 255, 255), TX_LIGHTGREEN);
+     12: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-05-25 03:35:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\TX\TXLib.h
+Compiled:	May 15 2021 19:21:07, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	May 15 2021 19:21:11
+
+Run file:	C:\Users\DNS\Documents\GitHub\KPK_Multik\Exampl_kacheli.exe
+Directory:	C:\Users\DNS\Documents\GitHub\KPK_Multik
+
+--------------------------------------------------

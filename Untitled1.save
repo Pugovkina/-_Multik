@@ -1,0 +1,18 @@
+# include "Pugovkina_Lib.h"
+# include "TXLib.h"
+# include <stdlib.h>
+
+int main()
+    {
+    txCreateWindow (1100, 800);
+    
+    txSelectFont ("Arial", 100);
+    txTextOut (550, 200, "Рисование качели с разными параметрами");
+    
+    KacheliDraw (750, 600, 1, 1, 0, TX_DARKGRAY);
+    
+    return 0;
+    }
+     
+     
+    

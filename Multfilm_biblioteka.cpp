@@ -9,6 +9,7 @@
 #include <TXLib.h>
 #include "Pugovkina_Lib.h"
 
+void Day ();
 void Morning ();
 void SolnceDraw_speak ();
 
@@ -22,6 +23,7 @@ int main()
 
 	Morning ();
 	SolnceDraw_speak ();
+	Day ();
 
 	//Titles (RGB (89, 184, 33), TX_WHITE, "Автор сценария", "Пуговкина Татьяна");
 
@@ -78,17 +80,18 @@ void SolnceDraw_speak ()
 
         t++;
         }
+    }
 
+void Day ()
+    {
     int koordinata = 50;
 	while (koordinata <= 450)
 	    {
-	    DomDraw (koordinata, 650 - koordinata*0.7, 2 - koordinata%2, 2 - koordinata%2, 1.5, 1.5, TX_BROWN, TX_BLUE, RGB (rand()%243, rand()%243, rand()%101), TX_DARKGRAY, TX_YELLOW);
+	    DomDraw_day (koordinata, 650 - koordinata*0.7, 2 - koordinata%2, 2 - koordinata%2, 1.5, 1.5, TX_BROWN, TX_BLUE, RGB (rand()%243, rand()%243, rand()%101), TX_DARKGRAY, TX_YELLOW);
 
         GerlDraw (koordinata + 230, 780 - koordinata*0.7, 0.7, 0.7, -0.5, 1, -(koordinata/10) % 2 * 2 - 1, (koordinata/10) % 2 * 2 - 1,
                   TX_YELLOW, RGB (rand()%207, rand()%159, rand()%255), TX_GREEN);
 
 	    koordinata += 200;
 	    }
-
     }
-

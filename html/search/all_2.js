@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['elkadraw_2',['ElkaDraw',['../_pugovkina___lib_8h.html#ae070a6e99dc29caa6f048ba89a9fff8f',1,'Pugovkina_Lib.h']]]
+  ['elkadraw_3',['ElkaDraw',['../_pugovkina___lib_8h.html#ae070a6e99dc29caa6f048ba89a9fff8f',1,'Pugovkina_Lib.h']]]
 ];

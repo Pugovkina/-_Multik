@@ -78,28 +78,17 @@ void SolnceDraw_speak ()
 
         t++;
         }
+    }
 
-    int koordinata = 50;
+/*int koordinata = 50;
 	while (koordinata <= 450)
 	    {
 	    DomDraw (koordinata, 650 - koordinata*0.7, 2 - koordinata%2, 2 - koordinata%2, 1.5, 1.5, TX_BROWN, TX_BLUE, RGB (rand()%243, rand()%243, rand()%101), TX_DARKGRAY, TX_YELLOW);
 
-        GerlDraw (x + 100, 705, 0.7, 0.7, -0.5, 1, -(x/10) % 2 * 2 - 1, (x/10) % 2 * 2 - 1,
+
+
+        GerlDraw (koordinata + 230, 780 - koordinata*0.7, 0.7, 0.7, -0.5, 1, -(koordinata/10) % 2 * 2 - 1, (koordinata/10) % 2 * 2 - 1,
                   TX_YELLOW, RGB (rand()%207, rand()%159, rand()%255), TX_GREEN);
-	    
+
 	    koordinata += 200;
-	    }
-
-     int x = 60;
-        while (x < 650)
-            {
-           // DomDraw (x, 580, 1.5, 1.5, 1, 1, TX_BROWN, TX_BLUE, RGB (rand()%243, rand()%243, rand()%101),
-                    // TX_DARKGRAY, TX_CYAN);
-
-            GerlDraw (x + 100, 705, 0.7, 0.7, -0.5, 1, -(x/10) % 2 * 2 - 1, (x/10) % 2 * 2 - 1,
-                      TX_YELLOW, RGB (rand()%207, rand()%159, rand()%255), TX_GREEN);
-
-            x += 215;
-            }
-}
-
+	    } */

@@ -12,6 +12,7 @@
 //!				- @ref CloudDraw ()
 //!				- @ref SolnceDraw ()
 //!             - @ref KacheliDraw ()
+//!             - @ref DomDraw_day ()
 //!				- @ref Fon_Rectangle ()
 //!
 //! <br>
@@ -46,6 +47,9 @@ void KacheliDraw (int x, int y, double sizeX, double sizeY, double height_kachel
 
 void GerlDraw (int x, int y, double sizeX, double sizeY, double smile, double legs, double handR, double handL, COLORREF bantikColor,
                COLORREF platieColor, COLORREF glazaColor);
+
+void DomDraw_day (int x, int y, double sizeX, double sizeY, double opendverX, double opendverY, COLORREF domColor,
+                  COLORREF krischaColor, COLORREF oknoColor, COLORREF trubaColor, COLORREF dverColor);
 
 //{-------------------------------------------------------------------------------------------------------------
 //! Разделяет экран на две части: 1я-часть - небо и 2я-часть - "земля"<br>
@@ -505,4 +509,85 @@ void GerlDraw (int x, int y, double sizeX, double sizeY, double smile, double le
     txLine (x + 40*sizeX, y + 55*sizeY, x - 40*sizeX, y + 55*sizeY);
     txLine (x - 40*sizeX, y + 55*sizeY, x,            y);
     txFloodFill (x, y + 35*sizeY);
+    }
+
+
+//{-------------------------------------------------------------------------------------------------------------
+//! Рисует дом, который "просыпается". Идёт дым и открываются двери.
+//!
+//! <table border = 0>
+//!  <tr>
+//!   <td> @image html Dom_day.jpg </td>
+//!   <td>
+//!     @param x             x            - Х-начальная координата рисования дома
+//!     @param y             y            - Y-начальная координата рисования дома
+//!     @param sizeX         sizeX        - изменение размера дома по координате Х
+//!     @param sizeY         sizeY        - изменение размера дома по координате Y
+//!     @param opendverX     opendverX    - координата X - "открытие" двери
+//!     @param opendverY     opendverY    - координата Y - "открытие" двери
+//!     @param domColor      domColor     - цвет дома
+//!     @param krischaColor  krischaColor - цвет крыши
+//!     @param oknoColor     oknoColor    - цвет окна
+//!     @param trubaColor    trubaColor   - цвет трубы
+//!     @param dverColor     dverColor    - цвет двери
+//!   </td>
+//!  </tr>
+//! </table>
+//!
+//! @note   Функция очень похожа на функцию DomDraw. Просто не смогла придумать как добавить дым.
+//!
+//! @par			             Пример использования:
+//! @code
+//!       DomDraw_day (100, 650, 1,3, 1,3, 1.5, 1.5, TX_BROWN, TX_BLUE, RGB (134, 134, 134), TX_DARKGRAY, TX_YELLOW);
+//! @endcode
+//}-------------------------------------------------------------------------------------------------------------
+
+void DomDraw_day (int x, int y, double sizeX, double sizeY, double opendverX, double opendverY, COLORREF domColor,
+                  COLORREF krischaColor, COLORREF oknoColor, COLORREF trubaColor, COLORREF dverColor)
+    {
+    txSetColor (TX_BLACK, 3);
+
+    txSetFillColor (domColor);
+    txRectangle (x,            y,            x + 80*sizeX, y + 80*sizeY);
+    txRectangle (x + 60*sizeX, y + 40*sizeY, x + 80*sizeX, y + 80*sizeY);
+
+    txSetFillColor (krischaColor);
+    txLine      (x + 40*sizeX, y - 40*sizeY, x - 10*sizeX, y + 10*sizeY);
+    txLine      (x + 40*sizeX, y - 40*sizeY, x + 90*sizeX, y + 10*sizeY);
+    txFloodFill (x + 40*sizeX, y - 10*sizeY);
+
+    txSetFillColor (trubaColor);
+    POINT Tryba[] = {{x + 60*sizeX, y - 20*sizeY},
+                     {x + 60*sizeX, y - 50*sizeY},
+                     {x + 80*sizeX, y - 50*sizeY},
+                     {x + 80*sizeX, y +  1*sizeY}};
+    txPolygon (Tryba, 4);
+
+    txSetFillColor (oknoColor);
+    txRectangle (x + 20*sizeX, y + 20*sizeY, x + 50*sizeX, y + 40*sizeY);
+
+    int t = 0;
+    while (t <=10)
+        {
+        txSetColor (RGB (221, 221, 221), 15);
+        txArc (x + 70*sizeX * (t%2), y - 70*sizeY * (t%2), x +  90*sizeX * (t%2), y - 60*sizeY * (t%2),  30 + (10 + t%2), 180);
+        txArc (x + 80*sizeX * (t%2), y - 80*sizeY * (t%2), x + 110*sizeX * (t%2), y - 70*sizeY * (t%2), 180 + (10 - t%2), 180);
+
+        txSetColor (TX_BLACK);
+        txSetFillColor (dverColor);
+
+        POINT Dver[] = {{x + 60*sizeX,                         y + 40*sizeY},
+                        {x + 60*sizeX,                         y + 80*sizeY},
+                        {x + 80*sizeX - opendverX * (t%2 - 1), y + 80*sizeY + opendverY * (t%3 + 6)},
+                        {x + 80*sizeX - opendverX * (t%2 - 1), y + 40*sizeY + opendverY * (t%3 + 6)}};
+        txPolygon (Dver, 4);
+
+        txSetFillColor (TX_BLACK);
+        txEllipse (x + 70*sizeX - opendverX/2 * (t%2), y + 55*sizeY + opendverY/2 * (t%2),
+                   x + 75*sizeX - opendverX/2 * (t%2), y + 65*sizeY + opendverY/2 * (t%2));
+
+        txSleep(150);
+
+        t++;
+        }
     }

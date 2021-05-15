@@ -9,8 +9,10 @@
 #include <TXLib.h>
 #include "Pugovkina_Lib.h"
 
+void Day ();
 void Morning ();
 void SolnceDraw_speak ();
+void Day_walk ();
 
 int main()
 	{
@@ -22,6 +24,8 @@ int main()
 
 	Morning ();
 	SolnceDraw_speak ();
+	Day ();
+	Day_walk ();
 
 	//Titles (RGB (89, 184, 33), TX_WHITE, "Автор сценария", "Пуговкина Татьяна");
 
@@ -80,15 +84,51 @@ void SolnceDraw_speak ()
         }
     }
 
-/*int koordinata = 50;
+void Day ()
+    {
+    int koordinata = 50;
 	while (koordinata <= 450)
 	    {
-	    DomDraw (koordinata, 650 - koordinata*0.7, 2 - koordinata%2, 2 - koordinata%2, 1.5, 1.5, TX_BROWN, TX_BLUE, RGB (rand()%243, rand()%243, rand()%101), TX_DARKGRAY, TX_YELLOW);
-
-
+	    DomDraw_day (koordinata, 650 - koordinata*0.7, 2 - koordinata%2, 2 - koordinata%2, 1.5, 1.5, TX_BROWN, TX_BLUE, RGB (rand()%243, rand()%243, rand()%101), TX_DARKGRAY, TX_YELLOW);
 
         GerlDraw (koordinata + 230, 780 - koordinata*0.7, 0.7, 0.7, -0.5, 1, -(koordinata/10) % 2 * 2 - 1, (koordinata/10) % 2 * 2 - 1,
                   TX_YELLOW, RGB (rand()%207, rand()%159, rand()%255), TX_GREEN);
 
 	    koordinata += 200;
-	    } */
+	    }
+    }
+
+void Day_walk ()
+    {
+    int t = 0;
+    while (t <= 15)
+        {
+        Fon_Rectangle (RGB (151, 255, 255), TX_LIGHTGREEN);
+
+	    for (int kolichestvo = 0; kolichestvo <= 50; kolichestvo ++)
+		    Flowers (rand() % 1100, 260 + rand() % 800,
+			RGB ( 60 + rand() % 80, 190 + rand() % 30, 200 + rand() %  40),
+			RGB (210 + rand() % 11, 210 + rand() % 11,   0 + rand() % 166));
+    
+    /*int x = 60;
+    while (x <= 650)
+        {
+        Fon_Dom_Derevia (x, x, RGB (255, 128, 192));
+            
+        x += 215;
+        }      */
+		
+        SolnceDraw (150 + t*2, 100, 2, 2, 0.1 - t%4, t%2, t%2 - 1.5, TX_YELLOW);
+
+        TychkaDraw (  5 + t*2,  60, 1.5, 2 , RGB (121, 206, 227));
+        TychkaDraw (345 + t*2, 100, 1.5, 2 , RGB (121, 206, 227));
+        TychkaDraw (545 + t*2, 100, 1.5, 2 , RGB (121, 206, 227));
+        TychkaDraw (645 + t*2, 100, 1.5, 2 , RGB (121, 206, 227));	
+
+        KacheliDraw (400, 420, 1, 1, 1, TX_DARKGRAY);
+        
+        txSleep(150);
+
+        t++;	
+        }
+    }

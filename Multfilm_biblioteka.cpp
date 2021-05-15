@@ -19,13 +19,13 @@ int main()
 
 	txBegin ();
 
-	//Titles (RGB (89, 184, 33), TX_WHITE, "Мультфильм", "Прогулка c подружками");
+	Titles (RGB (89, 184, 33), TX_WHITE, "Мультфильм", "Прогулка c подружками");
 
 	Morning ();
 	SolnceDraw_speak ();
 	Day ();
 
-	//Titles (RGB (89, 184, 33), TX_WHITE, "Автор сценария", "Пуговкина Татьяна");
+	Titles (RGB (89, 184, 33), TX_WHITE, "Автор сценария", "Пуговкина Татьяна");
 
 	txEnd ();
 
@@ -38,8 +38,8 @@ void Morning ()
 
 	for (int kolichestvo = 0; kolichestvo <= 50; kolichestvo ++)
 		Flowers (rand() % 1100, 260 + rand() % 800,
-				RGB ( 60 + rand() % 80, 190 + rand() % 30, 200 + rand() %  40),
-				RGB (210 + rand() % 11, 210 + rand() % 11,   0 + rand() % 166));
+		RGB ( 60 + rand() % 80, 190 + rand() % 30, 200 + rand() %  40),
+		RGB (210 + rand() % 11, 210 + rand() % 11,   0 + rand() % 166));
 
 	for (int kolichestvo = 0; kolichestvo <= 7; kolichestvo ++)
 		CloudDraw (200 + rand() % 1000, 230 - rand() % 450, 1, 1, RGB (160, 217, 250));
@@ -55,10 +55,10 @@ void Morning ()
 	    }
 
     for (int kolichestvo = 0; kolichestvo <= 7; kolichestvo ++)
-      {
+       {
         ElkaDraw (650 + rand() % 800, 180 + rand() % 300, 1, 1, 0, 0, TX_GREEN, TX_BROWN);
         ElkaDraw (rand() % 250, 180 + rand() % 250, 1, 1, 0, 0, TX_GREEN, TX_BROWN);
-      }
+       }
 
     KacheliDraw (750, 600, 1, 1, 0, TX_DARKGRAY);
 
@@ -74,7 +74,7 @@ void SolnceDraw_speak ()
 
         txSetColor   (TX_ORANGE);
         txSelectFont ("Arial", 40);
-        txTextOut (185, 120, "С добрым утром");
+        txTextOut (325, 120, "С добрым утром");
 
         txSleep(200);
 

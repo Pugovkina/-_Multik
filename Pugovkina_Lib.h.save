@@ -6,11 +6,11 @@
 //! @mainpage  Функции:
 //!				- @ref Titles ()
 //!				- @ref Flowers ()
-//!				- @ref DomDraw ()
 //!				- @ref CloudDraw ()
 //!				- @ref SolnceDraw ()
 //!				- @ref Fon_Rectangle ()
-//! <br>
+//!             - @ref DomDraw 
+//!
 //! <table border = 0>
 //!  <tr>
 //!    <td> @image html MEM.jpg </td>

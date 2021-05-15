@@ -1,0 +1,520 @@
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe, файл: C:\C++\TX\TXLib.h, строка: 12963, функция: bool {anonymous}::TX::txClear(HDC),
+
+Сообщение: Окно рисования не создано или не в порядке.
+
+#1: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-13 03:10:30 +0400], Instance: 0x00000000004DE4E0 (64-bit), Flags: Cmdre0, Thread: 0xE44 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x000000000040B205 in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: (anonymous namespace)::TX::_txError()
+# 1 0x0000000000413EE4 in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: (anonymous namespace)::TX::txClear()
+# 2 0x000000000041DE0E in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: BeginTitles()
+# 3 0x000000000041DBBF in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-13 03:10:30 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\C++\TX\TXLib.h
+Compiled:	May  3 2021 13:41:34, GNU g++ 4.9.2, std=199711L, MinGW-W64 Runtime 4.0 (alpha - rev. 6583) 2014-04-15, 64-bit, Debug
+Started:	May 03 2021 13:41:36
+
+Run file:	C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe
+Directory:	C:\Users\DNS\Documents\GitHub\KPK_Multik
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe, файл: C:\C++\TX\TXLib.h, строка: 12924, функция: HBRUSH__* {anonymous}::TX::txSetFillColor(COLORREF, HDC),
+
+Сообщение: Окно рисования не создано или не в порядке.
+
+#1: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-13 03:10:30 +0400], Instance: 0x00000000004DE4E0 (64-bit), Flags: Cmdre0, Thread: 0x149C (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x000000000040B205 in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: (anonymous namespace)::TX::_txError()
+# 1 0x0000000000413A0A in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: (anonymous namespace)::TX::txSetFillColor()
+# 2 0x000000000041DE13 in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: BeginTitles()
+# 3 0x000000000041DBBF in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-13 03:10:30 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\C++\TX\TXLib.h
+Compiled:	May  3 2021 13:46:00, GNU g++ 4.9.2, std=199711L, MinGW-W64 Runtime 4.0 (alpha - rev. 6583) 2014-04-15, 64-bit, Debug
+Started:	May 03 2021 13:46:03
+
+Run file:	C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe
+Directory:	C:\Users\DNS\Documents\GitHub\KPK_Multik
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe, файл: C:\C++\TX\TXLib.h, строка: 8525, функция: HWND__* {anonymous}::TX::txCreateWindow(double, double, bool),
+
+Сообщение: Окно рисования уже создано!
+
+#1: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-13 03:10:30 +0400], Instance: 0x00000000004DE4E0 (64-bit), Flags: CMdRe0, Thread: 0x16F8 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x000000000040B205 in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: (anonymous namespace)::TX::_txError()
+# 1 0x0000000000402FB9 in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: (anonymous namespace)::TX::txCreateWindow()
+# 2 0x000000000041DE2F in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: BeginTitles()
+# 3 0x000000000041DBBF in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-13 03:10:30 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\C++\TX\TXLib.h
+Compiled:	May  3 2021 13:48:04, GNU g++ 4.9.2, std=199711L, MinGW-W64 Runtime 4.0 (alpha - rev. 6583) 2014-04-15, 64-bit, Debug
+Started:	May 03 2021 13:48:06
+
+Run file:	C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe
+Directory:	C:\Users\DNS\Documents\GitHub\KPK_Multik
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe, файл: C:\C++\TX\TXLib.h, строка: 8525, функция: HWND__* {anonymous}::TX::txCreateWindow(double, double, bool),
+
+Сообщение: Окно рисования уже создано!
+
+#1: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-13 03:10:30 +0400], Instance: 0x00000000004DE4E0 (64-bit), Flags: CMdRe0, Thread: 0x8B0 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x000000000040B205 in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: (anonymous namespace)::TX::_txError()
+# 1 0x0000000000402FB9 in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: (anonymous namespace)::TX::txCreateWindow()
+# 2 0x000000000041D779 in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: Fon_Rectangle()
+# 3 0x000000000041DC10 in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: Fon_osnova()
+# 4 0x000000000041DBC4 in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-13 03:10:30 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\C++\TX\TXLib.h
+Compiled:	May  3 2021 13:48:41, GNU g++ 4.9.2, std=199711L, MinGW-W64 Runtime 4.0 (alpha - rev. 6583) 2014-04-15, 64-bit, Debug
+Started:	May 03 2021 13:48:43
+
+Run file:	C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe
+Directory:	C:\Users\DNS\Documents\GitHub\KPK_Multik
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe, файл: C:\C++\TX\TXLib.h, строка: 8525, функция: HWND__* {anonymous}::TX::txCreateWindow(double, double, bool),
+
+Сообщение: Окно рисования уже создано!
+
+#1: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-13 03:10:30 +0400], Instance: 0x00000000004DE4E0 (64-bit), Flags: CMdRe0, Thread: 0x1434 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x000000000040B205 in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: (anonymous namespace)::TX::_txError()
+# 1 0x0000000000402FB9 in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: (anonymous namespace)::TX::txCreateWindow()
+# 2 0x000000000041D779 in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: Fon_Rectangle()
+# 3 0x000000000041DC10 in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: Fon_osnova()
+# 4 0x000000000041DBC4 in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-13 03:10:30 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\C++\TX\TXLib.h
+Compiled:	May  3 2021 13:51:29, GNU g++ 4.9.2, std=199711L, MinGW-W64 Runtime 4.0 (alpha - rev. 6583) 2014-04-15, 64-bit, Debug
+Started:	May 03 2021 13:51:31
+
+Run file:	C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe
+Directory:	C:\Users\DNS\Documents\GitHub\KPK_Multik
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe, файл: C:\C++\TX\TXLib.h, строка: 8525, функция: HWND__* {anonymous}::TX::txCreateWindow(double, double, bool),
+
+Сообщение: Окно рисования уже создано!
+
+#1: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-13 03:10:30 +0400], Instance: 0x00000000004DE4E0 (64-bit), Flags: CMdRe0, Thread: 0x16DC (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x000000000040B205 in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: (anonymous namespace)::TX::_txError()
+# 1 0x0000000000402FB9 in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: (anonymous namespace)::TX::txCreateWindow()
+# 2 0x000000000041E006 in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: EndTitles()
+# 3 0x000000000041DB80 in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-13 03:10:30 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\C++\TX\TXLib.h
+Compiled:	May  3 2021 13:52:16, GNU g++ 4.9.2, std=199711L, MinGW-W64 Runtime 4.0 (alpha - rev. 6583) 2014-04-15, 64-bit, Debug
+Started:	May 03 2021 13:52:18
+
+Run file:	C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe
+Directory:	C:\Users\DNS\Documents\GitHub\KPK_Multik
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe, файл: C:\C++\TX\TXLib.h, строка: 8525, функция: HWND__* {anonymous}::TX::txCreateWindow(double, double, bool),
+
+Сообщение: Окно рисования уже создано!
+
+#1: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-13 03:10:30 +0400], Instance: 0x00000000004DE4E0 (64-bit), Flags: CMdRe0, Thread: 0x6C4 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x000000000040B205 in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: (anonymous namespace)::TX::_txError()
+# 1 0x0000000000402FB9 in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: (anonymous namespace)::TX::txCreateWindow()
+# 2 0x000000000041D779 in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: Fon_Rectangle()
+# 3 0x000000000041DC10 in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: Fon_osnova()
+# 4 0x000000000041DBC4 in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-13 03:10:30 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\C++\TX\TXLib.h
+Compiled:	May  3 2021 13:53:12, GNU g++ 4.9.2, std=199711L, MinGW-W64 Runtime 4.0 (alpha - rev. 6583) 2014-04-15, 64-bit, Debug
+Started:	May 03 2021 13:53:14
+
+Run file:	C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe
+Directory:	C:\Users\DNS\Documents\GitHub\KPK_Multik
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe, файл: C:\C++\TX\TXLib.h, строка: 8525, функция: HWND__* {anonymous}::TX::txCreateWindow(double, double, bool),
+
+Сообщение: Окно рисования уже создано!
+
+#1: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-13 03:10:30 +0400], Instance: 0x00000000004DE4E0 (64-bit), Flags: CMdRe0, Thread: 0x1764 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x000000000040B205 in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: (anonymous namespace)::TX::_txError()
+# 1 0x0000000000402FB9 in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: (anonymous namespace)::TX::txCreateWindow()
+# 2 0x000000000041D779 in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: Fon_Rectangle()
+# 3 0x000000000041DC59 in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: Fon_osnova()
+# 4 0x000000000041DC0D in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-13 03:10:30 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\C++\TX\TXLib.h
+Compiled:	May  3 2021 13:54:45, GNU g++ 4.9.2, std=199711L, MinGW-W64 Runtime 4.0 (alpha - rev. 6583) 2014-04-15, 64-bit, Debug
+Started:	May 03 2021 13:54:47
+
+Run file:	C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe
+Directory:	C:\Users\DNS\Documents\GitHub\KPK_Multik
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe, файл: C:\C++\TX\TXLib.h, строка: 8525, функция: HWND__* {anonymous}::TX::txCreateWindow(double, double, bool),
+
+Сообщение: Окно рисования уже создано!
+
+#1: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-13 03:10:30 +0400], Instance: 0x00000000004DE4E0 (64-bit), Flags: CMdRe0, Thread: 0x1624 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x000000000040B205 in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: (anonymous namespace)::TX::_txError()
+# 1 0x0000000000402FB9 in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: (anonymous namespace)::TX::txCreateWindow()
+# 2 0x000000000041D779 in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: Fon_Rectangle()
+# 3 0x000000000041DE3C in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: Fon_osnova()
+# 4 0x000000000041DC0D in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-13 03:10:30 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\C++\TX\TXLib.h
+Compiled:	May  3 2021 13:59:25, GNU g++ 4.9.2, std=199711L, MinGW-W64 Runtime 4.0 (alpha - rev. 6583) 2014-04-15, 64-bit, Debug
+Started:	May 03 2021 13:59:27
+
+Run file:	C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe
+Directory:	C:\Users\DNS\Documents\GitHub\KPK_Multik
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe, файл: C:\C++\TX\TXLib.h, строка: 8525, функция: HWND__* {anonymous}::TX::txCreateWindow(double, double, bool),
+
+Сообщение: Окно рисования уже создано!
+
+#1: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-13 03:10:30 +0400], Instance: 0x00000000004DE4E0 (64-bit), Flags: CMdRe0, Thread: 0x14E4 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x000000000040B205 in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: (anonymous namespace)::TX::_txError()
+# 1 0x0000000000402FB9 in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: (anonymous namespace)::TX::txCreateWindow()
+# 2 0x000000000041D779 in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: Fon_Rectangle()
+# 3 0x000000000041DE14 in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: Fon_osnova()
+# 4 0x000000000041DC0D in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-13 03:10:30 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\C++\TX\TXLib.h
+Compiled:	May  3 2021 14:02:15, GNU g++ 4.9.2, std=199711L, MinGW-W64 Runtime 4.0 (alpha - rev. 6583) 2014-04-15, 64-bit, Debug
+Started:	May 03 2021 14:02:18
+
+Run file:	C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe
+Directory:	C:\Users\DNS\Documents\GitHub\KPK_Multik
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe, файл: C:\C++\TX\TXLib.h, строка: 8525, функция: HWND__* {anonymous}::TX::txCreateWindow(double, double, bool),
+
+Сообщение: Окно рисования уже создано!
+
+#1: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-13 03:10:30 +0400], Instance: 0x00000000004DE4E0 (64-bit), Flags: CMdRe0, Thread: 0xB28 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x000000000040B205 in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: (anonymous namespace)::TX::_txError()
+# 1 0x0000000000402FB9 in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: (anonymous namespace)::TX::txCreateWindow()
+# 2 0x000000000041D779 in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: Fon_Rectangle()
+# 3 0x000000000041DE3F in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: Fon_osnova()
+# 4 0x000000000041DDF8 in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-13 03:10:30 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\C++\TX\TXLib.h
+Compiled:	May  3 2021 14:34:45, GNU g++ 4.9.2, std=199711L, MinGW-W64 Runtime 4.0 (alpha - rev. 6583) 2014-04-15, 64-bit, Debug
+Started:	May 03 2021 14:34:47
+
+Run file:	C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe
+Directory:	C:\Users\DNS\Documents\GitHub\KPK_Multik
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe, файл: C:\C++\TX\TXLib.h, строка: 8525, функция: HWND__* {anonymous}::TX::txCreateWindow(double, double, bool),
+
+Сообщение: Окно рисования уже создано!
+
+#1: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-13 03:10:30 +0400], Instance: 0x00000000004DE4E0 (64-bit), Flags: CMdRe0, Thread: 0x1284 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x000000000040B205 in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: (anonymous namespace)::TX::_txError()
+# 1 0x0000000000402FB9 in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: (anonymous namespace)::TX::txCreateWindow()
+# 2 0x000000000041D779 in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: Fon_Rectangle()
+# 3 0x000000000041DE4A in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: Fon_osnova()
+# 4 0x000000000041DE03 in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-13 03:10:30 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\C++\TX\TXLib.h
+Compiled:	May  3 2021 14:41:25, GNU g++ 4.9.2, std=199711L, MinGW-W64 Runtime 4.0 (alpha - rev. 6583) 2014-04-15, 64-bit, Debug
+Started:	May 03 2021 14:41:28
+
+Run file:	C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe
+Directory:	C:\Users\DNS\Documents\GitHub\KPK_Multik
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe, файл: C:\C++\TX\TXLib.h, строка: 8525, функция: HWND__* {anonymous}::TX::txCreateWindow(double, double, bool),
+
+Сообщение: Окно рисования уже создано!
+
+#1: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-13 03:10:30 +0400], Instance: 0x00000000004DE4E0 (64-bit), Flags: CMdRe0, Thread: 0x1790 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x000000000040B205 in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: (anonymous namespace)::TX::_txError()
+# 1 0x0000000000402FB9 in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: (anonymous namespace)::TX::txCreateWindow()
+# 2 0x000000000041D779 in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: Fon_Rectangle()
+# 3 0x000000000041DE5D in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: Fon_osnova()
+# 4 0x000000000041DE03 in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-13 03:10:30 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\C++\TX\TXLib.h
+Compiled:	May  3 2021 14:42:18, GNU g++ 4.9.2, std=199711L, MinGW-W64 Runtime 4.0 (alpha - rev. 6583) 2014-04-15, 64-bit, Debug
+Started:	May 03 2021 14:42:21
+
+Run file:	C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe
+Directory:	C:\Users\DNS\Documents\GitHub\KPK_Multik
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe, файл: C:\C++\TX\TXLib.h, строка: 8525, функция: HWND__* {anonymous}::TX::txCreateWindow(double, double, bool),
+
+Сообщение: Окно рисования уже создано!
+
+#1: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-13 03:10:30 +0400], Instance: 0x00000000004DE4E0 (64-bit), Flags: CMdRe0, Thread: 0x12F4 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x000000000040B205 in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: (anonymous namespace)::TX::_txError()
+# 1 0x0000000000402FB9 in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: (anonymous namespace)::TX::txCreateWindow()
+# 2 0x000000000041D779 in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: Fon_Rectangle()
+# 3 0x000000000041DE5D in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: Fon_osnova()
+# 4 0x000000000041DE03 in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-13 03:10:30 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\C++\TX\TXLib.h
+Compiled:	May  3 2021 14:44:21, GNU g++ 4.9.2, std=199711L, MinGW-W64 Runtime 4.0 (alpha - rev. 6583) 2014-04-15, 64-bit, Debug
+Started:	May 03 2021 14:44:24
+
+Run file:	C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe
+Directory:	C:\Users\DNS\Documents\GitHub\KPK_Multik
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe, файл: C:\C++\TX\TXLib.h, строка: 12963, функция: bool {anonymous}::TX::txClear(HDC),
+
+Сообщение: Окно рисования не создано или не в порядке.
+
+#1: TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-13 03:10:30 +0400], Instance: 0x00000000004DE4E0 (64-bit), Flags: Cmdre0, Thread: 0x147C (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x000000000040B205 in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: (anonymous namespace)::TX::_txError()
+# 1 0x0000000000413EE4 in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: (anonymous namespace)::TX::txClear()
+# 2 0x000000000041DBD4 in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: Titles()
+# 3 0x000000000041DDB5 in C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 170, Date: 2021-03-13 03:10:30 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\C++\TX\TXLib.h
+Compiled:	May  3 2021 14:45:44, GNU g++ 4.9.2, std=199711L, MinGW-W64 Runtime 4.0 (alpha - rev. 6583) 2014-04-15, 64-bit, Debug
+Started:	May 03 2021 14:45:46
+
+Run file:	C:\Users\DNS\Documents\GitHub\KPK_Multik\Multfilm_biblioteka.exe
+Directory:	C:\Users\DNS\Documents\GitHub\KPK_Multik
+
+--------------------------------------------------

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['solncedraw_7',['SolnceDraw',['../_pugovkina___lib_8h.html#ad1c9c7d4ebfcc9627cbeeaaa198361ea',1,'Pugovkina_Lib.h']]]
+  ['pugovkina_5flib_2eh_7',['Pugovkina_Lib.h',['../_pugovkina___lib_8h.html',1,'']]]
 ];

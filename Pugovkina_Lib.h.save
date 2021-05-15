@@ -10,10 +10,11 @@
 //!             - @ref ElkaDraw ()
 //!				- @ref CloudDraw ()
 //!				- @ref SolnceDraw ()
+//!             - @ref KacheliDraw ()
 //!				- @ref Fon_Rectangle ()
 //!
 //! <br>
-//! <table border = 0>
+//! <table border = 0 align = "center">
 //!  <tr>
 //!    <td> @image html MEM.jpg </td>
 //!    <td>
@@ -35,11 +36,15 @@ void SolnceDraw (double x, double y, double sizeX, double sizeY, double eyes, do
 
 void CloudDraw (double x, double y, double sizeX, double sizeY, COLORREF cloudColor);
 
-void DomDraw (int x, double y, double sizeX, double sizeY, double opendverX, double opendverY, COLORREF domColor, COLORREF krischaColor, COLORREF oknoColor, COLORREF trubaColor, COLORREF dverColor);
+void DomDraw (int x, double y, double sizeX, double sizeY, double opendverX, double opendverY, COLORREF domColor, COLORREF krischaColor,
+              COLORREF oknoColor, COLORREF trubaColor, COLORREF dverColor);
 
 void ElkaDraw (double x, double y, double sizeX, double sizeY, double veterX, double veterY, COLORREF hvoiaColor, COLORREF stvolColor);
 
 void KacheliDraw (int x, int y, double sizeX, double sizeY, double height_kacheli, COLORREF kacheliColor);
+
+void GerlDraw (int x, int y, double sizeX, double sizeY, double smile, double legs, double handR, double handL, COLORREF bantikColor,
+               COLORREF platieColor, COLORREF glazaColor);
 
 //{-------------------------------------------------------------------------------------------------------------
 //! –аздел€ет экран на две части: 1€-часть - небо и 2€-часть - "земл€"<br>
@@ -379,7 +384,7 @@ void ElkaDraw (double x, double y, double sizeX, double sizeY, double veterX, do
 //!
 //! <table border = 0>
 //!  <tr>
-//!   <td> @image html Kac.jpg </td>
+//!   <td> @image html Kacheli.jpg </td>
 //!   <td>
 //!     @param x               x              - ’-начальна€ координата рисовани€ качель
 //!     @param y               y              - Y-начальна€ координата рисовани€ качель
@@ -423,4 +428,81 @@ void KacheliDraw (int x, int y, double sizeX, double sizeY, double height_kachel
         txLine (x + 100*sizeX, y + 17*sizeY, x + 105*sizeX, y);
         txLine (x - 100*sizeX, y - 20*sizeY, x - 95*sizeX, y-43);
         }
+    }
+
+//{-------------------------------------------------------------------------------------------------------------
+//! –исуетс€ девочка
+//!
+//! <table border = 0>
+//!  <tr>
+//!   <td> @image html Gerl.jpg </td>
+//!   <td>
+//!     @param x            x           - ’-начальна€ координата рисовани€ девочки
+//!     @param y            y           - Y-начальна€ координата рисовани€ девочки
+//!     @param sizeX        sizeX       - изменение размера девочки по координате ’
+//!     @param sizeY        sizeY       - изменение размера девочки по координате Y
+//!     @param smile        smile       - параметр, вли€ющий на "улыбку" качель
+//!     @param legs         legs        - параметр, отвечающий за движение ног
+//!     @param handR        handR       - параметр, отвечающий за движение правой руки
+//!     @param handL        handL       - параметр, отвечающий за движение левой руки
+//!     @param bantikColor  bantikColor - цвет бантика
+//!     @param platieColor  platieColor - цвет плать€
+//!     @param glazaColor   glazaColor  - цвет глаз
+//!   </td>
+//!  </tr>
+//! </table>
+//!
+//! @note   ƒевочка, в треугольном платье, с бантиком на голове. ÷вет плать€ и бантика можно задавать случайным образом.
+//!         Ќачальна€ координата у девочки - точка соединени€ туловища и головы.
+//!
+//! @par			  ѕример использовани€:
+//! @code
+//!       GerlDraw (250, 705, 0.7, 0.7, -0.5, 1, -(x/10) % 2 * 2 - 1, (x/10) % 2 * 2 - 1,
+//!                TX_YELLOW, RGB (rand()%207, rand()%159, rand()%255), TX_GREEN);
+//! @endcode
+//}-------------------------------------------------------------------------------------------------------------
+
+void GerlDraw (int x, int y, double sizeX, double sizeY, double smile, double legs,
+               double handR, double handL, COLORREF bantikColor,
+               COLORREF platieColor, COLORREF glazaColor)
+    {
+    txSetColor (TX_BLACK, 2);
+
+    txSetFillColor (RGB (208, 208, 208));
+    txEllipse (x - 25*sizeX, y - 50*sizeY, x + 25*sizeX, y - 1*sizeY);
+
+    txSetFillColor (glazaColor);
+    txEllipse (x - 15*sizeX, y - 40*sizeY, x -  5*sizeX, y - 25*sizeY);
+    txEllipse (x +  5*sizeX, y - 40*sizeY, x + 15*sizeX, y - 25*sizeY);
+
+    POINT nos[] = {{x,           y - 25*sizeY},
+                   {x + 5*sizeX, y - 20*sizeY},
+                   {x - 5*sizeX, y - 20*sizeY}};
+    txPolygon (nos, 3);
+
+    txSetColor (TX_RED, 3);
+    txLine (x - 10*sizeX, y - (15 + 3.0*smile)*sizeY, x,            y - 12*sizeY);
+    txLine (x,            y - 12*sizeY,           x + 10*sizeX, y - (15 + 3.0*smile)*sizeY);
+
+    txSetFillColor (bantikColor);
+    POINT bantik[] = {{x - 20*sizeX, y - 42*sizeY},
+                      {x - 12*sizeX, y - 70*sizeY},
+                      {x +  2*sizeX, y - 45*sizeY},
+                      {x - 20*sizeX, y - 42*sizeY},
+                      {x - 40*sizeX, y - 47*sizeY},
+                      {x - 28*sizeX, y - 20*sizeY}};
+    txPolygon (bantik, 6);
+
+    txSetColor (TX_BLACK, 3);
+    txLine (x - 40*sizeX, y + (20 + 9*handR)*sizeY, x - 10*sizeX, y + 15*sizeY);
+    txLine (x + 10*sizeX, y + 15*sizeY,             x + 40*sizeX, y + (20 - 9*handL)*sizeY);
+    txLine (x - 15*sizeX, y + 55*sizeY,             x - (15 + legs/2)*sizeX, y + 85*sizeY);
+    txLine (x + 15*sizeX, y + 55*sizeY,             x + (15 + legs/2)*sizeX, y + 85*sizeY);
+
+    txSetColor (platieColor, 3);
+    txSetFillColor (platieColor);
+    txLine (x,            y,            x + 40*sizeX, y + 55*sizeY);
+    txLine (x + 40*sizeX, y + 55*sizeY, x - 40*sizeX, y + 55*sizeY);
+    txLine (x - 40*sizeX, y + 55*sizeY, x,            y);
+    txFloodFill (x, y + 35*sizeY);
     }

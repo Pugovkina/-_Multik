@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['titles_14',['Titles',['../_pugovkina___lib_8h.html#ab32d96ce488d6091fbf93d8f1037d3d9',1,'Pugovkina_Lib.h']]]
+  ['kachelidraw_16',['KacheliDraw',['../_pugovkina___lib_8h.html#a36d133fffd7d8c9910bdc274294b50e5',1,'Pugovkina_Lib.h']]]
 ];

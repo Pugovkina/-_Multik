@@ -6,11 +6,13 @@
 //! @mainpage  Функции:
 //!				- @ref Titles ()
 //!				- @ref Flowers ()
+//!				- @ref DomDraw ()
+//!             - @ref ElkaDraw ()
 //!				- @ref CloudDraw ()
 //!				- @ref SolnceDraw ()
 //!				- @ref Fon_Rectangle ()
-//!             - @ref DomDraw 
 //!
+//! <br>
 //! <table border = 0>
 //!  <tr>
 //!    <td> @image html MEM.jpg </td>
@@ -31,9 +33,13 @@ void Titles (COLORREF fon_Color, COLORREF text_Color, char text_first_string[], 
 
 void SolnceDraw (double x, double y, double sizeX, double sizeY, double eyes, double lenghLuch, double smile, COLORREF sunColor);
 
-void CloudDraw (int x, int y, double sizeX, double sizeY, COLORREF cloudColor);
+void CloudDraw (double x, double y, double sizeX, double sizeY, COLORREF cloudColor);
 
 void DomDraw (int x, double y, double sizeX, double sizeY, double opendverX, double opendverY, COLORREF domColor, COLORREF krischaColor, COLORREF oknoColor, COLORREF trubaColor, COLORREF dverColor);
+
+void ElkaDraw (double x, double y, double sizeX, double sizeY, double veterX, double veterY, COLORREF hvoiaColor, COLORREF stvolColor);
+
+void KacheliDraw (int x, int y, double sizeX, double sizeY, double height_kacheli, COLORREF kacheliColor);
 
 //{-------------------------------------------------------------------------------------------------------------
 //! Разделяет экран на две части: 1я-часть - небо и 2я-часть - "земля"<br>
@@ -242,7 +248,7 @@ void SolnceDraw (double x, double y, double sizeX, double sizeY, double eyes, do
 //! @endcode
 //}-------------------------------------------------------------------------------------------------------------
 
-void CloudDraw (int x, int y, double sizeX, double sizeY, COLORREF cloudColor)
+void CloudDraw (double x, double y, double sizeX, double sizeY, COLORREF cloudColor)
     {
     txSetColor     (cloudColor);
     txSetFillColor (cloudColor);
@@ -274,7 +280,8 @@ void CloudDraw (int x, int y, double sizeX, double sizeY, COLORREF cloudColor)
 //!  </tr>
 //! </table>
 //!
-//! @note
+//! @note   У Дома есть крыша, труба, в окне можно менять цвет, цвет дома тоже можно задавать. Двери, при значении
+//!         параметра = 0, могут открываться. Планирую добавить дым из трубы.
 //!
 //! @par			             Пример использования:
 //! @code
@@ -317,3 +324,103 @@ void DomDraw (int x, double y, double sizeX, double sizeY, double opendverX, dou
 			   x + 75*sizeX - opendverX/2, y + 65*sizeY + opendverY/2);
 	}
 
+//{-------------------------------------------------------------------------------------------------------------
+//! Рисует ёлку
+//!
+//! <table border = 0>
+//!  <tr>
+//!   <td> @image html Elka.jpg </td>
+//!   <td>
+//!     @param x           x          - Х-начальная координата рисования ёлки
+//!     @param y           y          - Y-начальная координата рисования ёлки
+//!     @param sizeX       sizeX      - изменение размера ёлки по координате Х
+//!     @param sizeY       sizeY      - изменение размера ёлки по координате Y
+//!     @param veterX      veterX     - координата X - "раскачивания" ёлки
+//!     @param veterY      veterY     - координата Y - "раскачивания" ёлки
+//!     @param hvoiaColor  hvoiaColor - цвет хвои
+//!     @param stvolColor  stvolColor - цвет ствола
+//!   </td>
+//!  </tr>
+//! </table>
+//!
+//! @note    Ёлка рисуется 2-мя треугольниками. Ствол создаётся через прямоугольник. Есть параметры, отвечающие
+//!          за эффект "качания вершины", но не придумала как он должен быть задан. Можно задавать цвет хвои и
+//!          цвет ствола ёлки
+//!
+//! @par			  Пример использования:
+//! @code
+//!       ElkaDraw (250, 560, 1, 1, 0, 0, TX_GREEN, TX_BROWN);
+//! @endcode
+//}-------------------------------------------------------------------------------------------------------------
+
+void ElkaDraw (double x, double y, double sizeX, double sizeY, double veterX, double veterY, COLORREF hvoiaColor, COLORREF stvolColor)
+    {
+    txSetColor (hvoiaColor, 3);
+    txSetFillColor (hvoiaColor);
+
+    POINT elka_verh[] = {{x + veterX,   y - veterY},
+                         {x + 20*sizeX, y + 40*sizeY},
+                         {x - 20*sizeX, y + 40*sizeY}};
+    txPolygon (elka_verh, 3);
+
+    POINT elka_niz[] = {{x,            y + 30*sizeY},
+                        {x + 40*sizeX, y + 70*sizeY},
+                        {x - 40*sizeX, y + 70*sizeY}};
+    txPolygon (elka_niz, 3);
+
+    txSetColor (stvolColor, 3);
+    txSetFillColor (stvolColor);
+
+    txRectangle (x - 10*sizeX, y + 73*sizeY, x + 10*sizeX, y + 95*sizeY);
+    }
+
+//{-------------------------------------------------------------------------------------------------------------
+//! Рисует качели
+//!
+//! <table border = 0>
+//!  <tr>
+//!   <td> @image html Kac.jpg </td>
+//!   <td>
+//!     @param x               x              - Х-начальная координата рисования качель
+//!     @param y               y              - Y-начальная координата рисования качель
+//!     @param sizeX           sizeX          - изменение размера качель по координате Х
+//!     @param sizeY           sizeY          - изменение размера качель по координате Y
+//!     @param height_kacheli  height_kacheli - параметр, влияющий на "движение" качель
+//!                                             ("0" - качели не двигаются, "1" - начинают качаться)
+//!     @param kacheliColor    kacheliColor   - цвет качели
+//!   </td>
+//!  </tr>
+//! </table>
+//!
+//! @note
+//!
+//! @par			  Пример использования:
+//! @code
+//!       KacheliDraw (400, 400, 1, 1, 0, TX_BROWN);
+//! @endcode
+//}-------------------------------------------------------------------------------------------------------------
+
+void KacheliDraw (int x, int y, double sizeX, double sizeY, double height_kacheli, COLORREF kacheliColor)
+    {
+    txSetColor (kacheliColor, 3);
+    txSetFillColor (kacheliColor);
+
+    txLine (x + 40*sizeX, y + 20*sizeY, x - 40*sizeX, y + 20*sizeY);
+    txLine (x,            y,            x + 40*sizeX, y + 20*sizeY);
+    txLine (x - 40*sizeX, y + 20*sizeY, x,            y);
+
+    txFloodFill (x, y + 10*sizeY);
+
+    if (height_kacheli == 1)
+        {
+        txLine (x - 100*sizeX, y + 20*sizeY, x + 100*sizeX, y - 20*sizeY);
+        txLine (x + 100*sizeX, y - 20*sizeY, x +  95*sizeX, y - 35*sizeY);
+        txLine (x - 100*sizeX, y + 20*sizeY, x - 107*sizeX, y);
+        }
+    else
+        {
+        txLine (x - 100*sizeX, y - 20*sizeY, x + 100*sizeX, y+20);
+        txLine (x + 100*sizeX, y + 17*sizeY, x + 105*sizeX, y);
+        txLine (x - 100*sizeX, y - 20*sizeY, x - 95*sizeX, y-43);
+        }
+    }

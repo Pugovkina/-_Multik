@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['Функции_3a_11',['Функции:',['../index.html',1,'']]]
+  ['titles_8',['Titles',['../_pugovkina___lib_8h.html#ab32d96ce488d6091fbf93d8f1037d3d9',1,'Pugovkina_Lib.h']]]
 ];

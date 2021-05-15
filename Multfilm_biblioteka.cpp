@@ -17,11 +17,11 @@ int main()
 
 	txBegin ();
 
-	Titles (RGB (89, 184, 33), TX_WHITE, "Мультфильм", "Прогулка c подружками");
+	//Titles (RGB (89, 184, 33), TX_WHITE, "Мультфильм", "Прогулка c подружками");
 
 	Morning ();
 
-	Titles (RGB (89, 184, 33), TX_WHITE, "Автор сценария", "Пуговкина Татьяна");
+	//Titles (RGB (89, 184, 33), TX_WHITE, "Автор сценария", "Пуговкина Татьяна");
 
 	txEnd ();
 
@@ -49,6 +49,14 @@ void Morning ()
 
 	    koordinata += 200;
 	    }
+
+    for (int kolichestvo = 0; kolichestvo <= 7; kolichestvo ++)
+      {
+        ElkaDraw (650 + rand() % 800, 180 + rand() % 300, 1, 1, 0, 0, TX_GREEN, TX_BROWN);
+        ElkaDraw (rand() % 250, 180 + rand() % 250, 1, 1, 0, 0, TX_GREEN, TX_BROWN);
+      }
+
+    KacheliDraw (750, 600, 1, 1, 0, TX_BROWN);
 
     txSleep (1000);
     }

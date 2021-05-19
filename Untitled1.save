@@ -1,0 +1,56 @@
+#include<TXLib.h>
+#include "Pugovkina_Lib.h"
+
+int main ()
+    {
+    txCreateWindow (1100, 800);
+
+	txBegin ();
+	
+	txEnd ();
+
+	return 0;
+	}
+	
+    /*int t = 0;
+    while (t <= 30)
+        {
+        Fon_Rectangle ();
+
+        int x = 60;
+        while (x <= 650)
+            {
+            Fon_Dom_Derevia (x, x, RGB (255, 128, 192));
+
+            x += 215;
+            }
+
+        SolnceDraw (150 + t*2, 100, 2, 2, 0.1 - t%4, t%2, t%2 - 1.5, TX_YELLOW);
+
+        TychkaDraw (  5 + t*2,  60, 1.5, 2 , RGB (121, 206, 227));
+        TychkaDraw (345 + t*2, 100, 1.5, 2 , RGB (121, 206, 227));
+        TychkaDraw (545 + t*2, 100, 1.5, 2 , RGB (121, 206, 227));
+        TychkaDraw (645 + t*2, 100, 1.5, 2 , RGB (121, 206, 227));
+
+        GerlDraw (400 - t - 20, 400, 0.7, 0.7, 1 - t%2 -0.5, abs (t%10 - 10) - 5, -(t/10) % 2 * 2 - 1, 1,
+                  TX_YELLOW, TX_BLUE, TX_GREEN);
+
+        GerlDraw (540 - t, 410, 0.7, 0.7, 1 - t%2 -0.5, abs (t%10 - 10) - 5,  (t/10) % 2 * 2 - 1, 1,
+                  TX_YELLOW, TX_ORANGE, TX_GREEN);
+
+        KacheliDraw (400, 420, 1, 1, 2 - t%2 - 1, TX_DARKGRAY);
+
+        GerlDraw (690 - t, 705, 0.7, 0.7, 1 - t%2 -0.5, abs (t%10 - 10) - 5,  (t/10) % 2 * 2 - 1, 1,
+                  TX_YELLOW, TX_LIGHTRED, TX_GREEN);
+
+        txSetColor   (TX_ORANGE);
+        txSelectFont ("Arial", 20);
+        txTextOut (600 - t, 700, "Подружки!!!");
+
+        Rain (580 + t*2, 150, 5 * (t%2));
+
+        txSleep(150);
+
+        t++;
+        }
+    }

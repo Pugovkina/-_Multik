@@ -31,7 +31,7 @@ int main ()
 
         KacheliDraw (400, 420, 1, 1, 2 - t%2 - 1, TX_DARKGRAY);
 
-        DrawChick (630 - 10*t, 380, 1, 1, 20 * t%2 - 20, t%2*2-1, 6-t);
+        DrawChick (630 - 10*t, 380, 1, 1, 20 * (t%2 * 2 - 1), 20 * (t%2 * 2 - 1), 6-t);
 
         txSleep(1000);
 
